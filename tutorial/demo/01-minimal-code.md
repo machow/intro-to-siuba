@@ -1,10 +1,8 @@
 ---
 description: ''
-sidebar: 'demo'
-prev: null
-next: '/tutorial/demo/01-minimal-mcq'
-other:
-  my_setting: c
+sidebar: 'docs'
+chunk: 
+  test
 ---
 
 <Notebook
@@ -18,11 +16,79 @@ other:
 
 # Code Example
 
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+## setup
 
-<code-cell :kernel="nb.kernel" :onExecute="nb.execute" language="python">
+
+
+
+
+<code-cell :status="nb.status" :onExecute="nb.execute" language="python">
+
+    import pandas as pd
+
+
+
+</code-cell>
+
+
+## input-details
+
+
+
+<details v-fix-codemirror>
+
+
+
+<code-cell :status="nb.status" :onExecute="nb.execute" language="python">
+
+    print("some detail code")
+
+
+<template v-slot:output>
+
+    some detail code
+
+
+</template>
+
+
+</code-cell>
+
+</details>
+
+
+## input-hide tag
+
+
+
+
+
+<code-cell :status="nb.status" :onExecute="nb.execute" language="python">
+
+    print(pd.DataFrame({'a': [1,2,3]}))
+
+
+<template v-slot:output>
+
+       a
+    0  1
+    1  2
+    2  3
+
+
+</template>
+
+
+</code-cell>
+
+
+## input-lock tag
+
+
+
+
+
+<code-cell :status="nb.status" :onExecute="nb.execute" language="python">
 
     from plotnine import *
     from siuba.data import mtcars
@@ -33,13 +99,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <template v-slot:output>
 
 
-![png](./01-minimal-code_files/01-minimal-code_1_0.png)
+![png](./01-minimal-code_files/01-minimal-code_8_0.png)
 
 
 
 
 
-    <ggplot: (-9223372036570553582)>
+    <ggplot: (293548103)>
 
 
 
@@ -47,6 +113,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 </code-cell>
+
 
 
 </Notebook>

@@ -1,19 +1,22 @@
 ---
 description: ''
 sidebar: 'docs'
-prev: '/tutorial/demo/01-minimal-code'
-next: '/tutorial/demo/02-code-input'
+chunk:
+  test
 ---
 
 <Notebook
   v-slot="nb"
   >
 
+
 # Multiple Choice Example
 
 
 
-<code-cell :kernel="nb.kernel" :onExecute="nb.execute" language="python">
+
+
+<code-cell :status="nb.status" :onExecute="nb.execute" language="python">
 
     %%html
     
@@ -43,6 +46,7 @@ next: '/tutorial/demo/02-code-input'
 
 
 </code-cell>
+
 
 
 </Notebook>
