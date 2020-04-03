@@ -3,3 +3,4 @@ numpy==1.17.4
 pandas==0.25.3
 SQLAlchemy==1.3.11
 psycopg2==2.8.4
+plotnine==0.6.0
