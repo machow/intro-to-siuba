@@ -1,6 +1,6 @@
 set -e
 
-pip install -e /home/jovyan/tutorial/utils/siututor
+pip install -e /home/jovyan/utils/siututor
 
 jupyter trust /home/jovyan/tutorial/demo/01-minimal-mcq.ipynb
 
