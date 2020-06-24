@@ -1,0 +1,17 @@
+# vim files
+*.sw[po]
+
+# gridsome
+*.log
+.cache
+.DS_Store
+src/.temp
+node_modules
+dist
+.env
+.env.*
+.Rproj.user
+
+# python
+*.py[oc]
+*.egg

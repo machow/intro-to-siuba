@@ -1,1 +1,6 @@
+set -e
+
+pip install -e /home/jovyan/content/utils/siututor
+
 jupyter trust /home/jovyan/content/tutorial/demo/01-minimal.ipynb
+
