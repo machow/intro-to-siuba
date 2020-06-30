@@ -1,0 +1,100 @@
+---
+title: "Intro to ggplot2"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+chunk: data-viz
+jupyter:
+  jupytext:
+    cell_metadata_filter: name,tags,-all
+    formats: Rmd//Rmd,notebooks//ipynb
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.5.0
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Intro to Visualization with ggplot2
+
+
+```{python setup, tags=c("input-details", "setup")}
+# TODO: explain how to run this, and that they only need the gist (loads tools)
+import pandas as pd
+from siuba import arrange, select, mutate, filter, _
+from plotnine import ggplot, geom_point, coord_flip, aes, labs
+
+# temporary until I figure out where to put data
+url = "https://siublocks.s3.us-east-2.amazonaws.com/music_top200.csv"
+music_top200 = pd.read_csv(url)
+
+
+# TODO: shift into a package or file
+from siuba import pipe
+from IPython.display import HTML, display
+___ = pipe(lambda x: display(HTML("⚠️: <b>Don't forget to replace all the blanks!</b>")) and _)
+
+pd.set_option("display.max_rows", 6)
+
+from IPython import get_ipython
+# special ipython function to get the html formatter
+html_formatter = get_ipython().display_formatter.formatters['text/html']
+
+# when you see a Shout object, call the shout_html function on it
+html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(classes = "dataframe", max_rows = pd.get_option("display.max_rows")))
+```
+
+## ggplot basics
+
+TODO: fill in explanation
+
+```{python}
+(music_top200
+  >> arrange(_.position, -_.danceability)
+)
+```
+
+### Exercise 1: 
+
+Below is code with the arrange verb removed. Modify it to arrange by artist name and popularity.
+
+```{python}
+(music_top200
+  >> ___
+)
+```
+
+### Exercise 2:
+
+Modify the code below to arrange by artist name in **descending** order.
+
+```{python}
+(music_top200
+
+)
+```
+
+<p>What's the name of the *NSYNC song in the resulting data?</p>
+
+<q-multiple-choice>
+  <q-opt text="This I Promise You"><span>"Great job!"</span></q-opt>
+  <q-opt text="I Want You Back"><span>"Try again"</span></q-opt>
+  <q-opt text="Bye Bye Bye"><span>"Try again"</span></q-opt>
+  <q-opt text="It's Gonna Be Me"><span>"Try again"</span></q-opt>    
+</q-multiple-choice>
+
+
+<details>
+    <summary>solution</summary>
+
+```python
+(music_top200
+  >> arrange(-_.artist)
+)
+```
+
+</details>

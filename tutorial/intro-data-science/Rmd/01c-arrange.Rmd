@@ -1,0 +1,207 @@
+---
+title: "Arrange"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+chunk: basics
+jupyter:
+  jupytext:
+    cell_metadata_filter: name,tags,-all
+    formats: Rmd//Rmd,notebooks//ipynb
+    notebook_metadata_filter: purview
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.5.0
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+  purview:
+    branch: master
+    repo: machow/purview
+    url: https://mybinder.org
+    useBinder: 1
+    useStorage: 1
+---
+
+```{python setup, tags=c("input-details", "setup")}
+# TODO: explain how to run this, and that they only need the gist (loads tools)
+import pandas as pd
+from siuba import arrange, select, mutate, filter, _
+from plotnine import ggplot, geom_point, coord_flip, aes, labs
+
+# temporary until I figure out where to put data
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+music_top200 = pd.read_csv(fname)
+
+# tracks
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+track_features = pd.read_csv(fname)
+
+
+# TODO: shift into a package or file
+from siuba import pipe
+from IPython.display import HTML, display
+___ = pipe(lambda x: display(HTML("⚠️: <b>Don't forget to replace all the blanks!</b>")) and _)
+
+pd.set_option("display.max_rows", 6)
+
+from IPython import get_ipython
+# special ipython function to get the html formatter
+html_formatter = get_ipython().display_formatter.formatters['text/html']
+
+# when you see a Shout object, call the shout_html function on it
+html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+```
+
+```{python active="", eval=FALSE}
+import slides from '../slides/01c-slides.markdown'
+
+<RevealSlides :slides="slides" />
+
+```
+
+
+### Exercise 1:
+
+Modify the code below to arrange by artist name in **descending** order.
+
+<details>
+  <summary>hint</summary>
+  
+  > You can sort something in descending order, using the `-` operator.
+   
+  <details>
+      <summary>another hint</summary>
+      
+  > Start by using the pipe operator with `arrange()`. You will need to specify what to arrange by.
+      
+  </details>
+  
+</details>
+
+```{python}
+(music_top200
+
+)
+```
+
+```{python tags=c("solution-code")}
+(music_top200
+  >> arrange(-_.artist)
+)
+```
+
+```{python active="", eval=FALSE}
+<prompt-expandable header="What artist is the first observation (row) in the result?">
+
+<q-multiple-choice>
+  <q-opt text="$NOT"><span>"Great job!"</span></q-opt>
+  <q-opt text="高爾宣 OSN"><span>"Incorrect"</span></q-opt>
+  <q-opt text="Aaron Smith"><span>"Incorrect"</span></q-opt>
+  <q-opt text="Y2K"><span>"Incorrect"</span></q-opt>    
+</q-multiple-choice>
+
+</prompt-expandable>
+
+```
+
+### Exercise 2:
+
+What is the first track, if you filter to keep only observations from the country Mexico, and then sort by track name?
+
+```{python}
+(music_top200
+  >> ___
+  >> arrange(___)
+)
+```
+
+```{python tags=c("solution-code")}
+(music_top200
+  >> filter(_.country == "Mexico")
+  >> arrange(_.track_name)
+)
+```
+
+```{python active="", eval=FALSE}
+<prompt-expandable header="">
+
+<q-multiple-choice>
+  <q-opt text="11 PM"><span>"Great job!"</span></q-opt>
+  <q-opt text="一天 (電視劇《想見你》插曲)"><span>"Incorrect"</span></q-opt>
+  <q-opt text="everything i wanted"><span>"Incorrect"</span></q-opt>
+  <q-opt text="#24"><span>"Be sure to filter where country is Mexico"</span></q-opt>    
+</q-multiple-choice>
+
+</prompt-expandable>
+
+```
+
+### Exercise 3: 
+
+Below is code with the arrange verb removed. Modify it to arrange..
+
+* first by position
+* second by streams
+
+```{python}
+(music_top200
+  >> ___
+)
+```
+
+```{python tags=c("solution-code")}
+(music_top200
+  >> arrange(_.position, _.streams)
+)
+```
+
+```{python active="", eval=FALSE}
+
+<prompt-expandable header="What country has the position 1 track (The Box) with fewest streams?">
+
+<q-multiple-choice>
+  <q-opt text="Cyprus"><span>That's right! Make sure to double check that the track is named The Box by Roddy Ricch.</span></q-opt>
+  <q-opt text="United States"><span>Incorrect</span></q-opt>
+  <q-opt text="Brazil"><span>Incorrect</span></q-opt>
+    <q-opt text="Luxembou"><span>Incorrect</span></q-opt>
+</q-multiple-choice>
+
+</prompt-expandable>
+
+```
+
+### Exercise 4
+
+What's the shortest song in the top position in the `music_top200` data?
+
+```{python}
+
+
+
+```
+
+```{python tags=c("solution-code")}
+# NOTE: there are multiple ways to get the answer!
+(music_top200
+  >> arrange(_.position, _.duration)
+)
+```
+
+```{python active="", eval=FALSE}
+
+<prompt-expandable header="">
+
+<q-multiple-choice>
+  <q-opt text="Bad Girls, Good Vibes"><span>That's right!</span></q-opt>
+  <q-opt text="Klop Klop"><span>Incorrect. This is the shortest track in any position. Can you sort to get top position tracks first?</span></q-opt>
+  <q-opt text="Susamam"><span>Incorrect. This is the longest track in any position. Can you sort to get top position tracks first?</span></q-opt>
+    <q-opt text="Blockparty"><span>Incorrect. This is the shortest track in the last position.</span></q-opt>
+</q-multiple-choice>
+
+</prompt-expandable>
+
+```

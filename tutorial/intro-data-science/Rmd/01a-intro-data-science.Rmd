@@ -1,0 +1,158 @@
+---
+title: "Meet the data"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+chunk: basics
+include: false
+jupyter:
+  jupytext:
+    cell_metadata_filter: name,tags,-all
+    formats: Rmd//Rmd,notebooks//ipynb
+    notebook_metadata_filter: purview
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.5.0
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+  purview:
+    branch: master
+    repo: machow/purview
+    url: https://mybinder.org
+    useBinder: 1
+---
+
+# Introduction to Data Analysis with Siuba: Basics
+
+
+```{python setup, tags=c("input-details", "setup")}
+# TODO: explain how to run this, and that they only need the gist (loads tools)
+import pandas as pd
+from siuba import arrange, select, mutate, filter, _
+from plotnine import ggplot, geom_point, coord_flip, aes, labs
+
+# temporary until I figure out where to put data
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+music_top200 = pd.read_csv(fname)
+
+# tracks
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+track_features = pd.read_csv(fname)
+
+
+# TODO: shift into a package or file
+from siuba import pipe
+from IPython.display import HTML, display
+___ = pipe(lambda x: display(HTML("⚠️: <b>Don't forget to replace all the blanks!<b>")) and _)
+
+pd.set_option("display.max_rows", 6)
+
+from IPython import get_ipython
+# special ipython function to get the html formatter
+html_formatter = get_ipython().display_formatter.formatters['text/html']
+
+# when you see a Shout object, call the shout_html function on it
+html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(classes = "dataframe", max_rows = pd.get_option("display.max_rows")))
+```
+
+```{python active="", eval=FALSE}
+import slides from '../slides/01a-slides.markdown'
+
+<RevealSlides :slides="slides" />
+
+
+```
+
+## Introduction to Spotify data
+
+```{python}
+#from IPython.display import HTML, display
+music_top200
+```
+
+> 🔎 How many streams did the track named Blinding lights get this week?
+
+> 🔎 How many rows in the 12,417 row DataFrame are being shown above?
+
+> 🔎 What is the speechiness level of the track named Myron?
+
+<details>
+    <summary>show answers</summary>
+
+    * Blinding lights was streamed 7744570 times.
+    * 10 rows are being shown from the DataFrame
+    * The track named Myron has a speechiness of 0.29
+</details>
+    
+
+
+## What you'll learn to do
+
+In this tutorial you will learn about..
+
+* data that is represented in table called a DataFrame.
+* how to arrange rows and select columns.
+* how to create new columns and cut out specific rows.
+
+The next two examples show what you'll be able to do by the end of this chapter.
+It's okay if the code doesn't make sense yet.
+Just being able to run someone else's code goes a long way!
+
+
+
+### Big example 1: finding high energy hits
+
+Run the code below. It should do the following:
+
+* **arrange** the rows--first by position (lowest first), and second by energy (highest first).
+* **select** specific columns, such as country, position, and artist.
+
+```{python}
+(music_top200
+  >> arrange(_.position, _.duration)
+  >> select(_.country, _.position, _.artist, _.track_name, _.duration)
+)
+```
+
+Try doing the actions below, and then running the code.
+
+> 🔨 Try changing the two uses of `_.energy` above to `_.danciness`.
+
+
+### Big example 2: which countries does an artist have hits in?
+
+Run the code below. It should do the following:
+
+* **filter** to keep rows for the artist ITZY
+* use **ggplot** to add a point for each row in the filtered data.
+
+```{python}
+(music_top200
+  >> filter(_.artist == "ITZY")
+  >> ggplot(aes("streams", "country")) + geom_point() + labs(title = "ITZY hits across countries")
+)
+```
+
+
+> 🔨 Try changing the term `"ITZY"` to `"TIX"`. How many countries have TIX hits?
+
+> 🔨 Try stopping the plot with a comment. That is, put `#` to the left of `>> ggplot`. This should show you the raw data.
+
+<details>
+    <summary>solution</summary>
+
+Here is the solution code...
+    
+```python
+# code with artist changed, and plot commented out
+(music_top200
+  >> filter(_.artist == "TIX")
+  #>> ggplot(aes("streams", "country")) + geom_point() + labs(title = "ITZY hits across countries")
+)
+```
+
+</details>
