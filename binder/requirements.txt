@@ -1,4 +1,4 @@
-siuba==0.0.17
+siuba==0.0.21
 numpy==1.17.4
 pandas==0.25.3
 SQLAlchemy==1.3.11
