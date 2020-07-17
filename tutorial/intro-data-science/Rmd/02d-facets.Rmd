@@ -8,6 +8,7 @@ jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all
     formats: Rmd//Rmd,notebooks//ipynb
+    notebook_metadata_filter: purview
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
@@ -17,30 +18,43 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  purview:
+    branch: master
+    repo: machow/purview
+    url: https://mybinder.org
+    useBinder: 1
+    useStorage: 1
 ---
 
 ```{python setup, tags=c("input-details", "setup")}
 # TODO: explain how to run this, and that they only need the gist (loads tools)
 
-
+# wranglign ---------
 import pandas as pd
-from siuba import arrange, select, mutate, filter, _
-from plotnine import ggplot, geom_point, coord_flip, aes, labs, facet_wrap
+from siuba import *
 
-# temporary until I figure out where to put data
-fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+# plotting ----------
+from plotnine import *
+
+theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
+
+# data --------------
+fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
-# TODO: shift into a package or file
+# student support ----------
 from siuba import pipe
 from IPython.display import HTML, display
 from siututor import Blank
 ___ = Blank()
 
+# DataFrame display --------
 pd.set_option("display.max_rows", 6)
 
 from IPython import get_ipython
@@ -49,6 +63,7 @@ html_formatter = get_ipython().display_formatter.formatters['text/html']
 
 # when you see a Shout object, call the shout_html function on it
 html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+
 ```
 
 ```{python active="", eval=FALSE}

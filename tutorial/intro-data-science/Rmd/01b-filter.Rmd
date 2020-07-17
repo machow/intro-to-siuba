@@ -29,11 +29,16 @@ jupyter:
 ```{python setup, tags=c("input-details", "setup")}
 # TODO: explain how to run this, and that they only need the gist (loads tools)
 
+# wranglign ---------
 import pandas as pd
-from siuba import arrange, select, mutate, filter, _
-from plotnine import ggplot, geom_point, coord_flip, aes, labs
+from siuba import *
 
-# temporary until I figure out where to put data
+# plotting ----------
+from plotnine import *
+
+theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
+
+# data --------------
 fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
 #fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
@@ -43,12 +48,13 @@ fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/
 #fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
-# TODO: shift into a package or file
+# student support ----------
 from siuba import pipe
 from IPython.display import HTML, display
 from siututor import Blank
 ___ = Blank()
 
+# DataFrame display --------
 pd.set_option("display.max_rows", 6)
 
 from IPython import get_ipython
