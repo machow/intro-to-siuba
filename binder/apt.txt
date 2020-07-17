@@ -1,1 +1,1 @@
-fonts-wqy-zenhei
+ttf-mscorefonts-installer
