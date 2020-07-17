@@ -1,5 +1,7 @@
 set -e
 
+fc-cache
+
 pip install -e /home/jovyan/utils/siututor
 
 jupyter trust /home/jovyan/tutorial/demo/01-minimal-mcq.ipynb
