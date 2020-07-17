@@ -3,7 +3,7 @@ title: "Arrange"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: basics
+chunk: wrangle
 jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all
@@ -178,7 +178,9 @@ Below is code with the arrange verb removed. Modify it to arrange..
 
 What's the shortest song in the top position in the `music_top200` data?
 
-```{python}
+```{python tags=c("empty-code")}
+# add code below this line
+
 
 
 

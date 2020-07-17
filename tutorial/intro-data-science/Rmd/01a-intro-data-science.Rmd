@@ -3,7 +3,7 @@ title: "Meet the data"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: basics
+chunk: wrangle
 include: false
 jupyter:
   jupytext:

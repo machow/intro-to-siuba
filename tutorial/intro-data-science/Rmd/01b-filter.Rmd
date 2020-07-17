@@ -3,7 +3,7 @@ title: "Filter"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: basics
+chunk: wrangle
 jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all
@@ -29,17 +29,18 @@ jupyter:
 ```{python setup, tags=c("input-details", "setup")}
 # TODO: explain how to run this, and that they only need the gist (loads tools)
 
-
 import pandas as pd
 from siuba import arrange, select, mutate, filter, _
 from plotnine import ggplot, geom_point, coord_flip, aes, labs
 
 # temporary until I figure out where to put data
-fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # TODO: shift into a package or file
@@ -56,6 +57,7 @@ html_formatter = get_ipython().display_formatter.formatters['text/html']
 
 # when you see a Shout object, call the shout_html function on it
 html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+
 ```
 
 ```{python active="", eval=FALSE}
@@ -129,6 +131,12 @@ Change the filter to get hits from Canada.
 ### Exercise 3:
 
 Find the top 5 songs in Hong Kong.
+
+In the slides we discussed the `==` operator. Here is a longer list of some options!
+
+* `==`: is equal to
+* `<`: less than
+* `>`: greater than
 
 ```{python}
 (music_top200

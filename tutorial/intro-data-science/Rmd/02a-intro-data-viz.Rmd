@@ -1,9 +1,9 @@
 ---
-title: "Intro to ggplot2"
+title: "Getting started"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: data-viz
+chunk: visualize
 jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all
@@ -19,24 +19,25 @@ jupyter:
     name: python3
 ---
 
-# Intro to Visualization with ggplot2
-
-
 ```{python setup, tags=c("input-details", "setup")}
 # TODO: explain how to run this, and that they only need the gist (loads tools)
 import pandas as pd
-from siuba import arrange, select, mutate, filter, _
-from plotnine import ggplot, geom_point, coord_flip, aes, labs
+from siuba import *
+from plotnine import *
 
 # temporary until I figure out where to put data
-url = "https://siublocks.s3.us-east-2.amazonaws.com/music_top200.csv"
-music_top200 = pd.read_csv(url)
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+music_top200 = pd.read_csv(fname)
 
+# tracks
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+track_features = pd.read_csv(fname)
 
 # TODO: shift into a package or file
 from siuba import pipe
 from IPython.display import HTML, display
-___ = pipe(lambda x: display(HTML("⚠️: <b>Don't forget to replace all the blanks!</b>")) and _)
+from siututor import Blank
+___ = Blank()
 
 pd.set_option("display.max_rows", 6)
 
@@ -45,56 +46,137 @@ from IPython import get_ipython
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
 # when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(classes = "dataframe", max_rows = pd.get_option("display.max_rows")))
+html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
 ```
 
-## ggplot basics
+```{python active="", eval=FALSE}
+import slides from '../slides/02-slides.markdown'
 
-TODO: fill in explanation
+<RevealSlides :slides="slides" />
 
-```{python}
-(music_top200
-  >> arrange(_.position, -_.danceability)
-)
 ```
 
+<!-- #region tags=["exercise"] -->
 ### Exercise 1: 
 
-Below is code with the arrange verb removed. Modify it to arrange by artist name and popularity.
+In this exercise, there are two code cells. The first defines variables for tracks by different artists. The second creates a plot.
+
+Interact with the plot code to answer the following:
+
+* Who has the widest range of danceability? (i.e. biggist difference between highest and lowest)
+<!-- #endregion -->
 
 ```{python}
-(music_top200
-  >> ___
+roddy = (
+  track_features
+  >> filter(_.artist == "Roddy Ricch")
+)
+
+billie = (
+  track_features
+  >> filter(_.artist == "Billie Eilish")
+)
+
+other = (
+  track_features
+  >> filter(_.artist == "ITZY")
+)
+
+other
+```
+
+```{python}
+(roddy
+  >> ggplot(aes("danceability", "speechiness"))
+   + geom_point()
+   + expand_limits(x = [0, 1], y = [0, 1])
 )
 ```
 
+```{python tags=c("solution-code")}
+import pandas as pd
+all_together = pd.concat([roddy, billie, other])
+
+(all_together
+  >> ggplot(aes("danceability", "speechiness", color = "artist"))
+   + geom_point()
+   + expand_limits(x = [0, 1], y = [0, 1])
+)
+```
+
+<!-- #region tags=["exercise"] -->
 ### Exercise 2:
 
-Modify the code below to arrange by artist name in **descending** order.
+Does it look like there any extremely popular songs over 15 minutes long?
+
+There is not one concrete answer to this question.
+Make a plot below, and come up with an answer you might share with another person.
+<!-- #endregion -->
 
 ```{python}
-(music_top200
+(track_features
+  >> ggplot()
 
 )
 ```
 
-<p>What's the name of the *NSYNC song in the resulting data?</p>
+```{python tags=c("solution-code")}
+(track_features
+  >> ggplot(aes("duration", "popularity"))
+   + geom_point()
+)
+```
 
-<q-multiple-choice>
-  <q-opt text="This I Promise You"><span>"Great job!"</span></q-opt>
-  <q-opt text="I Want You Back"><span>"Try again"</span></q-opt>
-  <q-opt text="Bye Bye Bye"><span>"Try again"</span></q-opt>
-  <q-opt text="It's Gonna Be Me"><span>"Try again"</span></q-opt>    
-</q-multiple-choice>
-
-
+<!-- #region -->
 <details>
-    <summary>solution</summary>
+<summary>possible answers</summary>
+    
+<a target="_blank" href="https://v.usetapes.com/XhWxJ9lAox">screencast</a>
+    
+    
+</details>
+<!-- #endregion -->
 
-```python
-(music_top200
-  >> arrange(-_.artist)
+<!-- #region tags=["exercise"] -->
+### Exercise 3:
+
+Does the lowest energy track belong to a "low energy" artist?
+
+Filter the track_features data to create two variables
+
+* **artist_low**: tracks for the artist with the lowest energy track.
+* **artist_high**: tracks for the artist with the highest energy track.
+
+After examining plots of both artists, does the one with the lowest energy track seem to have lower energy songs in general?
+<!-- #endregion -->
+
+```{python}
+# this code is to help you examine track energy levels 
+
+(
+  track_features
+  >> arrange(_.energy)
 )
 ```
 
-</details>
+```{python}
+# create artist_low variable here
+
+artist_low = (
+    
+)
+```
+
+```{python}
+# create artist_high variable here
+
+ 
+```
+
+```{python}
+# examine plots of each artist, to answer question
+
+(___
+
+)
+```

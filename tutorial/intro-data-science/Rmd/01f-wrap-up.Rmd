@@ -3,7 +3,7 @@ title: "Wrap up"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: basics
+chunk: wrangle
 jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all

@@ -3,11 +3,12 @@ title: "Select"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: basics
+chunk: wrangle
 jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all
     formats: Rmd//Rmd,notebooks//ipynb
+    notebook_metadata_filter: purview
     text_representation:
       extension: .Rmd
       format_name: rmarkdown

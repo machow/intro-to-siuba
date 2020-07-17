@@ -1,9 +1,9 @@
 ---
-title: "Visualizing summaries"
+title: "Boxplots"
 output: html_document
 editor_options: 
   chunk_output_type: console
-chunk: summarize
+chunk: plot types
 jupyter:
   jupytext:
     cell_metadata_filter: name,tags,-all
@@ -52,11 +52,3 @@ import slides from '../slides/03c-slides.markdown'
 <RevealSlides :slides="slides" />
 
 ```
-
-### Exercise 1
-
-
-### Exercise 2
-
-
-### Exercise 3
