@@ -1,0 +1,91 @@
+---
+title: "Wrap up"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+chunk: basics
+jupyter:
+  jupytext:
+    cell_metadata_filter: name,tags,-all
+    formats: Rmd//Rmd,ipynb
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.5.0
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Wrap up
+
+
+```{python setup, include=FALSE, tags=c("input-details", "setup")}
+# TODO: explain how to run this, and that they only need the gist (loads tools)
+
+import pandas as pd
+from siuba import arrange, select, mutate, filter, _
+from plotnine import ggplot, geom_point, coord_flip, aes, labs
+
+# temporary until I figure out where to put data
+url = "https://siublocks.s3.us-east-2.amazonaws.com/music_top200.csv"
+music_top200 = pd.read_csv(url)
+
+
+# TODO: shift into a package or file
+from siuba import pipe
+from IPython.display import HTML, display
+___ = pipe(lambda x: display(HTML("⚠️: <b>Don't forget to replace all the blanks!<b>")) and _)
+
+pd.set_option("display.max_rows", 6)
+
+from IPython import get_ipython
+# special ipython function to get the html formatter
+html_formatter = get_ipython().display_formatter.formatters['text/html']
+
+# when you see a Shout object, call the shout_html function on it
+html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+```
+
+## Putting it together
+
+TODO: explain
+
+
+```{python}
+(music_top200 
+  >> filter(_.position == 1)
+  >> select(_.country, _.energy, _.acousticness) 
+  >> ggplot(aes("energy", "acousticness")) + geom_point()
+)
+```
+
+
+```{python}
+# TODO: don't include hours, introduce a lot of baggage
+#hours = 3600*1000 
+
+(music_top200
+  >> filter(_.country == "Hong Kong")
+  >> mutate(stream_ms = _.streams * _.duration_ms)
+#  >> mutate(stream_hours = (_.streams * _.duration_ms) / hours)
+  >> select(_.stream_ms, _.position, _.acousticness, _.energy)
+  >> ggplot(aes("stream_ms", "position")) + geom_point()
+)
+```
+
+
+## Exercises
+
+* What is Argentina's 10th most popular song? What's their most danceable song?
+  (future note: we can't filter eg 10th most danceable yet)
+* TODO: add more
+
+
+Advanced
+
+* Notice how we could filter songs in the 5th most streamed position, but not the 5th most danceable. (Show row_number called directly on Series, invite to put into mutate)
+
+
