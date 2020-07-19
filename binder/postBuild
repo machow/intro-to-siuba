@@ -4,5 +4,5 @@ fc-cache
 
 pip install -e /home/jovyan/utils/siututor /home/jovyan/utils/music_top200
 
-jupyter trust /home/jovyan/tutorial/demo/01-minimal-mcq.ipynb
+#jupyter trust /home/jovyan/tutorial/demo/01-minimal-mcq.ipynb
 
