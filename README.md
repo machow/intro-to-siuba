@@ -17,11 +17,14 @@
   - Clearly marking the slides
   - Some typos / markdown getting mangled
   - Few places where details element is used instead of a question box
+  - Better slide transitions when user clicks down (i.e. appears immediately)
+* Run some people through chapters 2 and 3
 * Intro page? (could punt to down the road)
 * A couple of screencasts showing 10 minute analyses, using skills from course
   (could also use verbs like count(), and refer to docs).
 * Suggested Tidy Tuesdays to try
 * A "next steps" outro lesson (could put at end of chapter 3 for now)
+* Figure out and add license
 
 
 ### Down the road
