@@ -238,9 +238,11 @@ Find the top 5 songs in Hong Kong.
 
 In the slides we discussed the `==` operator. Here is a longer list of some options!
 
-* `==`: is equal to
-* `<`: less than
-* `>`: greater than
+| operator | meaning |
+| -------- | ------- |
+| `==`     | is equal to |
+| `<`      | is less than |
+| `>`      | is greater than |
 
 
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
