@@ -15,3 +15,5 @@ dist
 # python
 *.py[oc]
 *.egg
+*.egg-info
+
