@@ -25,6 +25,7 @@
 * Suggested Tidy Tuesdays to try
 * A "next steps" outro lesson (could put at end of chapter 3 for now)
 * Figure out and add license
+* Remove /build/ from lesson urls
 
 
 ### Down the road
