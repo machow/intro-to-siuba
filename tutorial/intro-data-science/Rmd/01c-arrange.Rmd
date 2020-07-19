@@ -39,13 +39,13 @@ from plotnine import *
 theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
 
 # data --------------
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # student support ----------
@@ -61,8 +61,13 @@ from IPython import get_ipython
 # special ipython function to get the html formatter
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
-# when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+# here, we avoid the default df._repr_html_ method, since it inlines css
+# (style tags make vue angry)
+html_formatter.for_type(
+    pd.DataFrame,
+    lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
+)
+
 
 ```
 
@@ -120,7 +125,7 @@ Modify the code below to arrange by artist name in **descending** order.
 
 ### Exercise 2:
 
-What is the first track, if you filter to keep only observations from the country Mexico, and then sort by track name?
+What is the first track, if you filter to keep only observations from the country Mexico, and then sort in **ascending order** by track name?
 
 ```{python}
 (music_top200
@@ -152,7 +157,7 @@ What is the first track, if you filter to keep only observations from the countr
 
 ### Exercise 3: 
 
-Below is code with the arrange verb removed. Modify it to arrange..
+Below is code with the arrange verb removed. Modify it to arrange in ascending order..
 
 * first by position
 * second by streams

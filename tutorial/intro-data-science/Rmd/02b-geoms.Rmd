@@ -49,13 +49,13 @@ from plotnine import *
 theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
 
 # data --------------
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # student support ----------
@@ -71,8 +71,13 @@ from IPython import get_ipython
 # special ipython function to get the html formatter
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
-# when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+# here, we avoid the default df._repr_html_ method, since it inlines css
+# (style tags make vue angry)
+html_formatter.for_type(
+    pd.DataFrame,
+    lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
+)
+
 
 ```
 
@@ -178,8 +183,10 @@ Can you plot songs by MC Kevin o Chris, with both points and text?
 
 Why do you think Vamos pra Gaiola is high energy and high acousticness?
 
-<details>
-My best guess is that it's because it is acapella (people's voices make up the instruments)
+<iframe width="200" src="https://www.youtube.com/embed/0R6zBcV9JiY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<details><summary>answer</summary>
+My best guess is because the drums are done by a persons voice, there are few instruments, but it is still a pretty fast tempo. It would be interesting to look at their other tracks for a comparison.
 </details>
 
 

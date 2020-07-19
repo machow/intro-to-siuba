@@ -39,13 +39,13 @@ from plotnine import *
 theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
 
 # data --------------
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # student support ----------
@@ -61,8 +61,13 @@ from IPython import get_ipython
 # special ipython function to get the html formatter
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
-# when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+# here, we avoid the default df._repr_html_ method, since it inlines css
+# (style tags make vue angry)
+html_formatter.for_type(
+    pd.DataFrame,
+    lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
+)
+
 
 ```
 
@@ -127,12 +132,17 @@ Now, use summarize to calculate the min duration, and the max duration directly.
 )
 ```
 
-Why would you use summarize like this, rather than the arrange and filter approach?
 
-* Too many observations in data.
-* The min and max values might be in different observations (rows).
-* The arrange and filter approach can do anything summarize can.
-* 
+<prompt-expandable header="Why would you use summarize like this, rather than the arrange and filter approach?">
+
+<q-multiple-choice>
+  <q-opt text="The min and max values might be in different observations (rows)."><span>That's right. Filter keeps specific rows, but summarize can collect values from across rows.</span></q-opt>
+  <q-opt text="It keeps more of the original data."><span>Try again. Filter keeps all the variables (columns), while summarize will remove most of them.</span></q-opt>
+  <q-opt text="The arrange and filter approach can do anything summarize can."><span>Try again.</span></q-opt>
+</q-multiple-choice>
+
+</prompt-expandable>
+
 
 
 ### Exercise 3:
@@ -162,3 +172,11 @@ Based on the examples above, can you use only the filter verb to get the most st
   >> filter()
 )
 ```
+
+```{python}
+(music_top200
+  >> filter(_.streams == _.streams.max())
+)
+```
+
+<details><summary>What is the most streamed song?</summary>The Box by Roddy Ricch</details>

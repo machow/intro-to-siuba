@@ -39,13 +39,13 @@ from plotnine import *
 theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
 
 # data --------------
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # student support ----------
@@ -61,46 +61,46 @@ from IPython import get_ipython
 # special ipython function to get the html formatter
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
-# when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+# here, we avoid the default df._repr_html_ method, since it inlines css
+# (style tags make vue angry)
+html_formatter.for_type(
+    pd.DataFrame,
+    lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
+)
+
 
 ```
 
-### Putting it together (WORK IN PROGRESS)
+### Putting it together
 
-TODO: this will be slides explaining importing and comments. Student should be able to produce a valid python file that someone (with python experience) could run.
+This lesson shows what the beginning of an analysis might look like.
+Generally, data analysis is done in **notebooks**, like this one. In a notebook, you can alternate between blocks of code and narrative text.
 
-Importing is how you get the data (like `music_top200`) and verbs into Python.
+The first part of an analysis is often **importing** tools you will need for the analysis.
+For example, verbs like `filter` and `mutate` are imported from siuba.
+
+Another coding concept you'll see in this example is a **comment**.
+These are lines of code that start with `#`.
+In this case, the line is not treated as code, but a note for the reader.
+
+The imports for this analysis are shown below.
 
 ```python
+# here we import verbs like filter, arrange, and mutate from siuba.
+# the import * means to import all of siuba's verbs.
 from siuba import *
+
+# here we import everything for plotting from plotnine (like ggplot())
 from plotnine import *
 
-from music_top200 import *
-```
-
-Comments mean that you can start a line with `#` to ignore all the code in it
-
-```python
-# this is just a helpful message
-# the code below here won't run
-# music_top200
+# here we import the data for the course
+# note that rather than using * to get everything, you can name
+# specific things to import (like track_features)
+from music_top200 import music_top200, track_features
 ```
 
 
 ### Exercise 1:
-
-The code below imports everything from siuba.
-
-* Add lines to import everything from `plotnine` and `music_top200` as well.
-
-```{python}
-from siuba import *
-
-
-```
-
-### Exercise 2:
 
 For the artist with the top track in Spain, what country has the most streams for one of their tracks?
 
@@ -114,8 +114,10 @@ Note: you may need to code multiple times.
 </details>
 
 ```{python}
+# getting most streamed track for top artist in Spain
 (
-    
+
+
 )
 ```
 
@@ -131,13 +133,17 @@ Note: you may need to code multiple times.
 )
 ```
 
-### Exercise 3:
+### Exercise 2:
+
+Subset to keep only tracks in Hong Kong, then calculate a new column called stream_seconds, that's equal to streams times their duration.
+
+Once you've done that, try deleting the comments (`#`) in the code below to plot the data.
 
 ```{python}
 (music_top200
-  >> mutate(___)
-  >> mutate(stream_seconds = ___)
-  # >> ggplot(aes("stream_seconds", "position", color = "duration"))
+  >> ___
+  >> ___
+  #>> ggplot(aes("stream_seconds", "position", color = "duration"))
   # + geom_point()
 )
 ```
@@ -148,6 +154,6 @@ Note: you may need to code multiple times.
   >> filter(_.country == "Hong Kong")
   >> mutate(stream_seconds = _.streams * _.duration)
   >> ggplot(aes("stream_seconds", "position", color = "duration"))
-  + geom_point()
+   + geom_point()
 )
 ```

@@ -55,13 +55,13 @@ from plotnine import *
 theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
 
 # data --------------
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # student support ----------
@@ -77,8 +77,13 @@ from IPython import get_ipython
 # special ipython function to get the html formatter
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
-# when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+# here, we avoid the default df._repr_html_ method, since it inlines css
+# (style tags make vue angry)
+html_formatter.for_type(
+    pd.DataFrame,
+    lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
+)
+
 
 ```
 
@@ -93,12 +98,13 @@ import slides from '../slides/00-slides.markdown'
 ### Exercise 1: inspecting music data
 
 ```{python active="", eval=FALSE}
+
 import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
 
 <CodeCellTemplater
-    :templateVars="$frontmatter.exercise_pars[0]"
-    :status="nb.status" :onExecute="nb.execute" language="python"
-    >
+  :templateVars="$frontmatter.exercise_pars[0]"
+  :status="nb.status" :onExecute="nb.execute" language="python"
+  >
 
     (music_top200
       >> filter(_.country == "${this.country}")
@@ -198,13 +204,29 @@ import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
 
 ```
 
+<prompt-expandable header="Which artist has a track in the second position on the United States charts?">
+
+<q-multiple-choice>
+  <q-opt text="Roddy Ricch"><span>Try again. That artist is in the first position.</span></q-opt>
+  <q-opt text="Lil Uzi Vert"><span>That's right!</span></q-opt>
+  <q-opt text="Halsey"><span>Try again. That artist is the second from last position (198).</span></q-opt>
+</q-multiple-choice>
+
+</prompt-expandable>
+
+
+
+
 ### Exercise 2: inspecting `track_features` data
 
+Use the options below, to examine tracks by different artists. Can you find the options that order tracks from highest energy to lowest?
+
 ```{python active="", eval=FALSE}
+
 <CodeCellTemplater
-    :templateVars="$frontmatter.exercise_pars[1]"
-    :status="nb.status" :onExecute="nb.execute" language="python"
-    >
+  :templateVars="$frontmatter.exercise_pars[1]"
+  :status="nb.status" :onExecute="nb.execute" language="python"
+  >
 
     (track_features
       >> arrange(${this.arrangeVar})
@@ -332,14 +354,21 @@ import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
 
 ```
 
+<!-- #region -->
 ### Exercise 3: Plotting track features
+
+Here is one kind of plot you will learn to make in the course.
+
+
+Once you've tried some options, scroll down and click next to get started with the first chapter!
+<!-- #endregion -->
 
 ```{python active="", eval=FALSE}
 
 <CodeCellTemplater
-    :templateVars="$frontmatter.exercise_pars[2]"
-    :status="nb.status" :onExecute="nb.execute" language="python"
-    >
+  :templateVars="$frontmatter.exercise_pars[2]"
+  :status="nb.status" :onExecute="nb.execute" language="python"
+  >
 
     (track_features
       >> filter(_.artist == "${this.artist}")

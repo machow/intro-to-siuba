@@ -39,13 +39,13 @@ from plotnine import *
 theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
 
 # data --------------
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
 music_top200 = pd.read_csv(fname)
 
 # tracks
-fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-#fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
+#fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
+fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
 track_features = pd.read_csv(fname)
 
 # student support ----------
@@ -61,8 +61,13 @@ from IPython import get_ipython
 # special ipython function to get the html formatter
 html_formatter = get_ipython().display_formatter.formatters['text/html']
 
-# when you see a Shout object, call the shout_html function on it
-html_formatter.for_type(pd.DataFrame, lambda df: df.to_html(max_rows = pd.get_option("display.max_rows")))
+# here, we avoid the default df._repr_html_ method, since it inlines css
+# (style tags make vue angry)
+html_formatter.for_type(
+    pd.DataFrame,
+    lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
+)
+
 
 ```
 
@@ -78,9 +83,7 @@ import slides from '../slides/02-slides.markdown'
 
 In this exercise, there are two code cells. The first defines variables for tracks by different artists. The second creates a plot.
 
-Interact with the plot code to answer the following:
-
-* Who has the widest range of danceability? (i.e. biggist difference between highest and lowest)
+Read through the code and plot, and then answer the question beneath.
 <!-- #endregion -->
 
 ```{python}
@@ -109,6 +112,22 @@ other
    + expand_limits(x = [0, 1], y = [0, 1])
 )
 ```
+
+<!-- #region -->
+
+
+<prompt-expandable header="Who has the widest range of danceability? (i.e. biggist difference between highest and lowest)">
+
+<q-multiple-choice>
+  <q-opt text="Roddy Ricch"><span>Try again.</span></q-opt>
+  <q-opt text="Billie Eilish"><span>That's right!</span></q-opt>
+  <q-opt text="ITZY"><span>Try again. All the ITZY songs shown have roughly the same danceability.</span></q-opt>
+</q-multiple-choice>
+
+</prompt-expandable>
+
+
+<!-- #endregion -->
 
 ```{python tags=c("solution-code")}
 import pandas as pd
@@ -192,8 +211,28 @@ artist_low = (
 
 ```{python}
 # examine plots of each artist, to answer question
+# note, we're examining energy, so to make a scatterplot you could set
+# the second variable to anything interesting (e.g. popularity)
 
 (___
 
 )
 ```
+
+```{python}
+artist_low = track_features >> filter(_.artist == "Simon Smith")
+
+artist_high = track_features >> filter(_.artist == "Scooter")
+
+ggplot(artist_low, aes("energy", "popularity")) + geom_point()
+
+#ggplot(artist_high, aes("energy", "popularity")) + geom_point()
+```
+
+
+<details><summary>possible answer</summary>
+
+The high energy artist, Scooter, seems to only have high energy songs (from about .9 to 1 energy).
+    
+On the other hand, the low energy artist, Simon Smith, seems to have a wide range of energy values (from about 0 to 1 energy).
+</details>
