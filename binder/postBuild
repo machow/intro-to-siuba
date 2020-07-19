@@ -2,7 +2,7 @@ set -e
 
 fc-cache
 
-pip install -e /home/jovyan/utils/siututor
+pip install -e /home/jovyan/utils/{siututor,music_top200}
 
 jupyter trust /home/jovyan/tutorial/demo/01-minimal-mcq.ipynb
 
