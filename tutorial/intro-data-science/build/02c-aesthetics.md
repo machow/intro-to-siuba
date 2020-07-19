@@ -107,7 +107,7 @@ Use the code cell below to recreate it.
 
 
 
-    <ggplot: (-9223372036579254412)>
+    <ggplot: (-9223372036570129271)>
 
 
 
@@ -142,7 +142,7 @@ You may need to write and run code multiple times, and produce multiple plots.
 
 
 
-<prompt-expandable header="Which of these artists have hit tracks in the most countries?">
+<prompt-expandable header="Which of these artists have hit tracks in the most continents?">
 
 <q-multiple-choice>
   <q-opt text="Snelle"><span>Incorrect. Did you try using the color aesthetic?</span></q-opt>
