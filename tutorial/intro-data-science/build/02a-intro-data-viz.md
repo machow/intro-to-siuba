@@ -208,7 +208,7 @@ Read through the code and plot, and then answer the question beneath.
 
 
 
-    <ggplot: (300353544)>
+    <ggplot: (-9223372036562015863)>
 
 
 
@@ -256,7 +256,7 @@ Make a plot below, and come up with an answer you might share with another perso
 
 
 
-    <ggplot: (300349160)>
+    <ggplot: (292760054)>
 
 
 
@@ -465,36 +465,6 @@ After examining plots of both artists, does the one with the lowest energy track
 
 
 ⚠️: <b>Don't forget to replace all the blanks!</b>
-
-
-
-</template>
-
-</code-cell>
-
-
-<code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
-
-
-    artist_low = track_features >> filter(_.artist == "Simon Smith")
-    
-    artist_high = track_features >> filter(_.artist == "Scooter")
-    
-    ggplot(artist_low, aes("energy", "popularity")) + geom_point()
-    
-    #ggplot(artist_high, aes("energy", "popularity")) + geom_point()
-
-
-<template v-slot:output>
-
-
-![png](./02a-intro-data-viz_files/02a-intro-data-viz_14_0.png)
-
-
-
-
-
-    <ggplot: (-9223372036552385497)>
 
 
 

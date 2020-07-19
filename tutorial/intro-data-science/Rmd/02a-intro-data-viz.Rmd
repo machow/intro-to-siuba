@@ -219,7 +219,7 @@ artist_low = (
 )
 ```
 
-```{python}
+```{python tags=c("solution-code")}
 artist_low = track_features >> filter(_.artist == "Simon Smith")
 
 artist_high = track_features >> filter(_.artist == "Scooter")
