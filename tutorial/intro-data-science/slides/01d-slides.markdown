@@ -1,4 +1,4 @@
-<section><section>
+<section class="hide-cell"><section class="hide-cell">
 
 # The mutate verb
 
@@ -15,7 +15,7 @@ Or suppose you want to add a new variable.
 For that, you would use the mutate verb.
 
 
-</aside></section></section><section data-transition="slide-in none-out"><section data-transition="slide-in none-out">
+</aside></section></section><section data-transition="slide-in none-out" class=""><section data-transition="slide-in none-out" class="">
 
 ## Using mutate to change a variable
 
@@ -38,7 +38,7 @@ Here, you're calculating streams slash one thousand.
 
 **(Click the down arrow for a breakdown)**
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 ## Using mutate to change a variable
 
@@ -52,7 +52,7 @@ Here, you're calculating streams slash one thousand.
 
 The slash in Python performs division, so "streams divided by one thousand".
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 ## Using mutate to change a variable
 
@@ -66,7 +66,7 @@ The slash in Python performs division, so "streams divided by one thousand".
 
 On the left, you're saying you want to replace the existing streams column, by writing streams equals.
 
-</aside></section></section><section data-transition="none-in slide-out"><section data-transition="none-in slide-out">
+</aside></section></section><section data-transition="none-in slide-out" class=""><section data-transition="none-in slide-out" class="">
 
 ## Using mutate to change a variable (result)
 
@@ -194,7 +194,7 @@ That's often necessary during data processing and cleaning.
 Just like filter and arrange, you're not altering the original gapminder
 data, you're just changing the value in this new data frame that's being returned.
 
-</aside></section></section><section data-transition="slide-in none-out"><section data-transition="slide-in none-out">
+</aside></section></section><section data-transition="slide-in none-out" class=""><section data-transition="slide-in none-out" class="">
 
 ## Using mutate to add a new variable
 
@@ -335,7 +335,7 @@ You pipe your music data to the mutate verb.
 
 The asterisk in Python represents multiplication, so you write streams asterisk duration to multiply the two columns.
 
-</aside></section></section><section data-transition="none-in slide-out"><section data-transition="none-in slide-out">
+</aside></section></section><section data-transition="none-in slide-out" class=""><section data-transition="none-in slide-out" class="">
 
 ## Using mutate to add a new variable (result)
 
@@ -470,7 +470,7 @@ Column names need to be one word like this: you can't use spaces.
 Notice that in the results, there's a brand new `ttl_stream_time` column, which is much larger than `streams`.
 
 
-</aside></section></section><section data-transition="slide-in none-out"><section data-transition="slide-in none-out">
+</aside></section></section><section data-transition="slide-in none-out" class=""><section data-transition="slide-in none-out" class="">
 
 # Answering a question
 
@@ -497,7 +497,7 @@ We would do this in three steps:
 
 **(Click the down arrow for a breakdown)**
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 # Answering a question
 
@@ -629,7 +629,7 @@ We would do this in three steps:
 
 We use mutate to create the ttl_stream_time column. 
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 # Answering a question
 
@@ -761,7 +761,7 @@ We use mutate to create the ttl_stream_time column.
 
 Then we'd use filter to restrict our analysis to only Costa Rica. 
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 # Answering a question
 
@@ -893,7 +893,7 @@ Then we'd use filter to restrict our analysis to only Costa Rica.
 
 Then we'd use arrange to sort the data in descending order of our new ttl_stream_time variable.
 
-</aside></section></section><section data-transition="none-in slide-out"><section data-transition="none-in slide-out">
+</aside></section></section><section data-transition="none-in slide-out" class=""><section data-transition="none-in slide-out" class="">
 
 # Answering a question (result)
 
@@ -1029,7 +1029,7 @@ The most streamed track in Costa Rica is still the first in our result.
 
 However, it looks like the track normally in the 23rd position--René by Residente--is third, since it's over 7 minutes long!
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Let's practice!
 </section></section>

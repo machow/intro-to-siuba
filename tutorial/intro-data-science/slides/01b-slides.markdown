@@ -1,4 +1,4 @@
-<section><section>
+<section class="hide-cell"><section class="hide-cell">
 
 # The filter verb
 
@@ -9,7 +9,7 @@ Now that you've seen some code in action on the music data, we'll focus on writi
 
 In this chapter, you'll learn about the "verbs" in the siuba package. The first verb you'll use is filter.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # The filter verb
 
@@ -21,7 +21,7 @@ You use filter when you want to keep only at a subset of your observations, base
 
 Filtering data is a common first step in an analysis.
 
-</aside></section></section><section data-transition="slide-in none-out"><section data-transition="slide-in none-out">
+</aside></section></section><section data-transition="slide-in none-out" class=""><section data-transition="slide-in none-out" class="">
 
 ## Filter for top songs
 
@@ -46,7 +46,7 @@ This is done by using the pipe shown on the slide.
 2. write the pipe operator and verb name
 3. write the operation
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 ## Filter step 1: start the block
 
@@ -62,7 +62,7 @@ A block is written with opening and closing parentheses, and the name of your da
 
 Press enter twice after the name of your data, to make an empty line.
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 ## Filter step 2: pipe operator and verb name
 
@@ -79,7 +79,7 @@ It says "take whatever is before the pipe operator, and feed it into the next st
 
 In this case, the next step will be filter.
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 ## Filter step 3: write the operation
 
@@ -104,7 +104,7 @@ A single equals here would mean something different in python, which you'll see 
 Let's see what this code outputs.
 
 
-</aside></section></section><section data-transition="none-in slide-out"><section data-transition="none-in slide-out">
+</aside></section></section><section data-transition="none-in slide-out" class=""><section data-transition="none-in slide-out" class="">
 
 ## Filter for top songs
 
@@ -232,7 +232,7 @@ You can still use the `music` object for other analyses, and it won't be any dif
 Instead, filter is returning a new dataset, one with fewer rows, that then gets printed to the screen.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 ## Filter for country
 
@@ -363,7 +363,7 @@ words "Hong" and "Kong" are the content of a text variable, as opposed to variab
 You didn't need quotes around a number like 1, but you do around text.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 ## Filter with two variables
 
@@ -434,7 +434,7 @@ This kind of double filter is useful for extracting a single observation you're 
 You'll be able to practice this in the exercises.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Let's practice!
 <aside class="notes">

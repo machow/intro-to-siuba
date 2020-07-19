@@ -1,4 +1,4 @@
-<section><section>
+<section class=""><section class="">
 
 # Introduction to siuba
 <aside class="notes">
@@ -13,7 +13,7 @@ and anyone interested in siuba!
 
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Data Analysis
 
@@ -28,7 +28,7 @@ In this course, we'll focus on one area of data analysis where siuba shines: tra
 
 We'll also combine siuba with a library called plotnine to visualize data. Together, these libraries make a powerful combo.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Meet the data: Spotify top 200
 
@@ -40,7 +40,7 @@ We'll use data that Spotify publishes every week on the 200 most streamed songs,
 
 You can check it out on <a href="https://spotifycharts.com/regional/global/weekly/latest" target ="_blank">spotifycharts.com</a>
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Meet the data: Spotify top 200
 
@@ -163,7 +163,7 @@ The data we'll use is held in a **DataFrame**. A DataFrame is a big table of dat
 Notice that in the bottom-left of the table, it shows the number of rows and columns. This data has 12,000 rows and 6 columns.
 
 
-</aside></section><section data-transition="none-in slide-out">
+</aside></section><section data-transition="none-in slide-out" class="">
 
 # Meet the data: Spotify top 200
 
@@ -278,7 +278,7 @@ Every observation--or row--in the DataFrame is a track in the top 200 for a coun
 
 For example, in the highlighted code is the track in position 2 (second most streamed) in Argentina. The track name is Tattoo, and has been streamed 1,344,382 times, and is 202 seconds long!
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Meet the data: Spotify song features
 
@@ -300,7 +300,7 @@ Their measures for a song include:
 * speechiness
 * acousticness
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Data Analysis
 
@@ -344,7 +344,7 @@ The skills you'll build doing transformation and visualization in this course wi
 The course is interactive: between short lessons you'll complete interactive exercises by typing your own code.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # How code is structured
 
@@ -363,7 +363,7 @@ The course is interactive: between short lessons you'll complete interactive exe
 
 
 
-    <ggplot: (-9223372036550946451)>
+    <ggplot: (302434950)>
 
 
 <aside class="notes">
@@ -375,7 +375,7 @@ The top line of the code is the data. Every additional line is an action applied
 
 **Click down to see what each line of code does.**
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 # How code is structured
 
@@ -525,7 +525,7 @@ The first action is filtering the data, to keep only observations (rows) where `
 
 Don't worry to much about the details for now. Filter is the first thing you'll learn, once you start the first chapter!
 
-</aside></section><section data-transition="none-in none-out">
+</aside></section><section data-transition="none-in none-out" class="">
 
 # How code is structured
 
@@ -544,7 +544,7 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 
 
 
-    <ggplot: (-9223372036550946535)>
+    <ggplot: (281362429)>
 
 
 <aside class="notes">
@@ -552,7 +552,7 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 
 The next action, `ggplot(...)`, gets ready to make a plot, based on the data in the previous step.
 
-</aside></section><section data-transition="none-in slide-out">
+</aside></section><section data-transition="none-in slide-out" class="">
 
 # How code is structured
 
@@ -571,7 +571,7 @@ The next action, `ggplot(...)`, gets ready to make a plot, based on the data in 
 
 
 
-    <ggplot: (303829291)>
+    <ggplot: (302434901)>
 
 
 <aside class="notes">
@@ -581,7 +581,7 @@ Finally, `geom_point()` adds points to the plot. Each point comes from a row of 
 
 So in this case each point is a track by The Weeknd.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Let's practice!
 

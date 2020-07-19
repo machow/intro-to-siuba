@@ -1,4 +1,4 @@
-<section><section>
+<section class=""><section class="">
 
 # Introduction to siuba
 <aside class="notes">
@@ -8,7 +8,7 @@ In this chapter, you'll start writing data analysis code.
 
 We'll focus on basic actions--called verbs--that you can perform on a DataFrame.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Data Analysis
 
@@ -23,7 +23,7 @@ In this course, we'll focus on one area of data analysis where siuba shines: tra
 
 We'll also combine siuba with a library called plotnine to visualize data.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Meet the data: Spotify top 200
 
@@ -35,7 +35,7 @@ We'll use data that Spotify publishes every week on the top 200 songs in 62 diff
 
 You can check it out on <a href="https://spotifycharts.com/regional/global/weekly/latest" target ="_blank">spotifycharts.com</a>
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Meet the data: Spotify top 200
 
@@ -50,7 +50,7 @@ You can check it out on <a href="https://spotifycharts.com/regional/global/weekl
 
 For example, this line plot shows the top 200 hits in the United States.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Meet the data: Spotify song features
 
@@ -72,7 +72,7 @@ Their measures for a song include:
 * speechiness
 * acousticness
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Data Analysis
 
@@ -108,7 +108,7 @@ img {
 </div>
 
 
-</section></section><section><section>
+</section></section><section class=""><section class="">
 
 # Music data
 
@@ -231,7 +231,7 @@ The data we'll use is held in a **DataFrame**. A DataFrame is a big table of dat
 Notice that in the bottom-left of the table, it shows the number of rows and columns. This data has 12,417 rows and 22 columns.
 
 
-</aside></section></section><section data-transition="none none"><section data-transition="none none">
+</aside></section></section><section data-transition="none none" class=""><section data-transition="none none" class="">
 
 # How code is structured
 
@@ -244,32 +244,32 @@ It loads the tools we need from the siuba and plotnine libraries.
 
 It's said out loud as, "from siuba import star".
 
-</aside></section><section data-transition="none none">
+</aside></section><section data-transition="none none" class="">
 
 # How code is structured
 
 ![](model-structure-code-2.png)
-</section><section data-transition="none none">
+</section><section data-transition="none none" class="">
 
 # How code is structured
 
 ![](model-structure-code-3.png)
-</section><section data-transition="none none">
+</section><section data-transition="none none" class="">
 
 # How code is structured
 
 ![](model-structure-code-4.png)
-</section><section data-transition="none none">
+</section><section data-transition="none none" class="">
 
 # How code is structured
 
 ![](model-structure-code-5.png)
-</section><section data-transition="none none">
+</section><section data-transition="none none" class="">
 
 # How code is structured
 
 ![](model-structure-code-6.png)
-</section></section><section><section>
+</section></section><section class=""><section class="">
 
 # Let's practice!
 </section></section>

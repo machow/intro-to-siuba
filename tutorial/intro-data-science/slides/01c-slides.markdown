@@ -1,4 +1,4 @@
-<section><section>
+<section class="hide-cell"><section class="hide-cell">
 
 # The arrange verb
 
@@ -15,7 +15,7 @@ Arrange sorts the observations in a dataset, in ascending or descending order ba
 This is useful, for example, when you want to know the most extreme values in a dataset.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 ## Sorting with arrange
 
@@ -148,7 +148,7 @@ Looking at the track name column, this track is called Klop Klop, and is the sho
 Just like with filter, the music object itself is unchanged: arrange is just giving you a new, sorted dataset.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 ## arrange descending
 
@@ -276,7 +276,7 @@ This lets us see that the track with the longest duration is Susamam, which is a
 However, we might be interested in looking at duration within a specific country.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 ## arrange and filter
 
@@ -401,7 +401,7 @@ Suppose you wanted to find the longest duration song in the United States.
 
 To do that, you can combine the two verbs you've already learned: filter, and arrange.
 
-</aside></section><section>
+</aside></section><section class="">
 
 ## arrange and filter
 
@@ -529,7 +529,7 @@ Then you specify that you want to filter for country equals equals United States
 
 Then you use another pipe step.
 
-</aside></section><section>
+</aside></section><section class="">
 
 ## arrange and filter
 
@@ -655,7 +655,7 @@ Then you use another pipe step.
 The added pipe line takes the result of the filter, and gives it to arrange.
 You specify that you want to sort in descending order of duration.
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 ## arrange and filter
 
@@ -785,7 +785,7 @@ learn to pipe together
 multiple simple operations to create a rich and informative data analysis.
 
 
-</aside></section></section><section><section>
+</aside></section></section><section class=""><section class="">
 
 # Let's practice!
 </section></section>
