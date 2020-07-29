@@ -148,7 +148,7 @@ import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
 
 This exercise is a case study on selecting extreme differences between two features, such as energy and acousticness.
 
-At the end of the case study, you'll prompted to add code!
+At the end of the case study, you'll be prompted to add code!
 
 
 Generally tracks with higher energy tend to be less acoustic, as shown in the plot below.

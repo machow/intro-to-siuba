@@ -95,19 +95,14 @@ Use the code cell below to recreate it.
 
 
 
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
 
-
-
-![png](./02c-aesthetics_files/02c-aesthetics_4_1.png)
+![png](./02c-aesthetics_files/02c-aesthetics_4_0.png)
 
 
 
 
 
-    <ggplot: (-9223372036570129271)>
+    <ggplot: (283988267)>
 
 
 

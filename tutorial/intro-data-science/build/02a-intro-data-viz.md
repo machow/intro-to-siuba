@@ -77,7 +77,7 @@ import slides from '../slides/02-slides.markdown'
 
 In this exercise, there are two code cells. The first defines variables for tracks by different artists. The second creates a plot.
 
-Read through the code and plot, and then answer the question beneath.
+Read through the code and plot, and then modify it to answer the question beneath.
 
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 
@@ -185,6 +185,9 @@ Read through the code and plot, and then answer the question beneath.
 </code-cell>
 
 
+The code below plots hits for the `roddy` variable.
+Note that you could swap out `roddy` for any of the other two variables above.
+
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 
 
@@ -197,18 +200,14 @@ Read through the code and plot, and then answer the question beneath.
 
 <template v-slot:output>
 
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
 
-
-
-![png](./02a-intro-data-viz_files/02a-intro-data-viz_4_1.png)
+![png](./02a-intro-data-viz_files/02a-intro-data-viz_5_0.png)
 
 
 
 
 
-    <ggplot: (-9223372036562015863)>
+    <ggplot: (302456619)>
 
 
 
@@ -238,6 +237,12 @@ Does it look like there any extremely popular songs over 15 minutes long?
 There is not one concrete answer to this question.
 Make a plot below, and come up with an answer you might share with another person.
 
+<details><summary>hint</summary>
+
+> The duration column contains the length of each song in seconds. Use this with the popularity column.
+
+</details>
+
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 
 
@@ -250,13 +255,13 @@ Make a plot below, and come up with an answer you might share with another perso
 <template v-slot:output>
 
 
-![png](./02a-intro-data-viz_files/02a-intro-data-viz_7_0.png)
+![png](./02a-intro-data-viz_files/02a-intro-data-viz_8_0.png)
 
 
 
 
 
-    <ggplot: (292760054)>
+    <ggplot: (-9223372036551312310)>
 
 
 
@@ -275,20 +280,14 @@ Make a plot below, and come up with an answer you might share with another perso
 
 ### Exercise 3:
 
-Does the lowest energy track belong to a "low energy" artist?
+Does the lowest energy track belong to a "low energy" artist? In this exercise, we'll explore the questions using tracks by two artists.
 
-Filter the track_features data to create two variables
-
-* **artist_low**: tracks for the artist with the lowest energy track.
-* **artist_high**: tracks for the artist with the highest energy track.
-
-After examining plots of both artists, does the one with the lowest energy track seem to have lower energy songs in general?
+Here is the track data sorted by energy.
 
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 
 
     # this code is to help you examine track energy levels 
-    
     (
       track_features
       >> arrange(_.energy)
@@ -419,6 +418,10 @@ After examining plots of both artists, does the one with the lowest energy track
 </code-cell>
 
 
+ Notice that Simon Smith has the lowest energy song ("Blagaslavlaju vas"), while Scooter has the highest energy song ("How Much is the Fish?").
+
+First, filter the track_features data to create a variable named `artist_low` that has only tracks by the artist Simon Smith.
+
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 
 
@@ -434,6 +437,8 @@ After examining plots of both artists, does the one with the lowest energy track
 </code-cell>
 
 
+Next, create a variable named `artist_high` with tracks by the artist Scooter, who has the highest energy song.
+
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 
 
@@ -446,6 +451,8 @@ After examining plots of both artists, does the one with the lowest energy track
 
 </code-cell>
 
+
+Based on separate plots of their data, does the artist with the lowest energy track seem to have lower energy songs in general?
 
 <code-cell  :status="nb.status" :onExecute="nb.execute"  ex="a" :exIndx="0" language="python">
 

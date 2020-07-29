@@ -185,17 +185,14 @@ We used a plot and intuition to judge who tended to have highest energy and vale
 
 <template v-slot:output>
 
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
 
-
-
-![png](./03b-group-by_files/03b-group-by_11_1.png)
+![png](./03b-group-by_files/03b-group-by_11_0.png)
 
 
 
 
 
-    <ggplot: (296180684)>
+    <ggplot: (-9223372036555294755)>
 
 
 

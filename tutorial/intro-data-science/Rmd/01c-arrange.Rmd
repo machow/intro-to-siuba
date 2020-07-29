@@ -83,18 +83,19 @@ import slides from '../slides/01c-slides.markdown'
 
 Modify the code below to arrange by artist name in **descending** order.
 
-<details>
-  <summary>hint</summary>
-  
-  > You can sort something in descending order, using the `-` operator.
-   
-  <details>
-      <summary>another hint</summary>
-      
-  > Start by using the pipe operator with `arrange()`. You will need to specify what to arrange by.
-      
-  </details>
-  
+<details><summary>hint</summary>
+
+
+> You can sort something in descending order, using the `-` operator.
+
+
+<details><summary>another hint</summary>
+
+
+> Start by using the pipe operator with `arrange()`. You will need to specify what to arrange by.
+
+
+</details>
 </details>
 
 ```{python}
@@ -110,13 +111,13 @@ Modify the code below to arrange by artist name in **descending** order.
 ```
 
 ```{python active="", eval=FALSE}
-<prompt-expandable header="What artist is the first observation (row) in the result?">
+<prompt-expandable header="What artist is the last observation (row) in the result?">
 
 <q-multiple-choice>
-  <q-opt text="$NOT"><span>"Great job!"</span></q-opt>
-  <q-opt text="高爾宣 OSN"><span>"Incorrect"</span></q-opt>
-  <q-opt text="Aaron Smith"><span>"Incorrect"</span></q-opt>
-  <q-opt text="Y2K"><span>"Incorrect"</span></q-opt>    
+  <q-opt text="$NOT"><span>Great job!</span></q-opt>
+  <q-opt text="黃宣"><span>That's not right. Did you arrange in ascending, rather than descending order?</span></q-opt>
+  <q-opt text="Aaron Smith"><span>Incorrect</span></q-opt>
+  <q-opt text="Y2K"><span>Incorrect</span></q-opt>    
 </q-multiple-choice>
 
 </prompt-expandable>
@@ -145,10 +146,10 @@ What is the first track, if you filter to keep only observations from the countr
 <prompt-expandable header="">
 
 <q-multiple-choice>
-  <q-opt text="11 PM"><span>"Great job!"</span></q-opt>
-  <q-opt text="一天 (電視劇《想見你》插曲)"><span>"Incorrect"</span></q-opt>
-  <q-opt text="everything i wanted"><span>"Incorrect"</span></q-opt>
-  <q-opt text="#24"><span>"Be sure to filter where country is Mexico"</span></q-opt>    
+  <q-opt text="11 PM"><span>Great job!</span></q-opt>
+  <q-opt text="一天 (電視劇《想見你》插曲)"><span>Incorrect</span></q-opt>
+  <q-opt text="everything i wanted"><span>Incorrect</span></q-opt>
+  <q-opt text="#24"><span>Be sure to filter where country is Mexico</span></q-opt>    
 </q-multiple-choice>
 
 </prompt-expandable>

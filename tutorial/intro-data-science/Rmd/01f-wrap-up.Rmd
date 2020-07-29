@@ -79,10 +79,6 @@ Generally, data analysis is done in **notebooks**, like this one. In a notebook,
 The first part of an analysis is often **importing** tools you will need for the analysis.
 For example, verbs like `filter` and `mutate` are imported from siuba.
 
-Another coding concept you'll see in this example is a **comment**.
-These are lines of code that start with `#`.
-In this case, the line is not treated as code, but a note for the reader.
-
 The imports for this analysis are shown below.
 
 ```python
@@ -104,12 +100,12 @@ from music_top200 import music_top200, track_features
 
 For the artist with the top track in Spain, what country has the most streams for one of their tracks?
 
-Note: you may need to code multiple times.
+**Note: you may need to write and run code multiple times.**
 
-<details>
-  <summary>hint</summary>
-    
-  > First, find the artist in the top position in Spain. After, can you get only that artists tracks? Once you do that you should be close!
+<details><summary>hint</summary>
+
+
+> First, find the artist in the top position in Spain. After, can you get only that artists tracks? Once you do that you should be close!
     
 </details>
 

@@ -112,19 +112,14 @@ Then, answer the questions below.
 
 <template v-slot:output>
 
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
 
-
-
-![png](./02d-facets_files/02d-facets_5_1.png)
+![png](./02d-facets_files/02d-facets_5_0.png)
 
 
 
 
 
-    <ggplot: (295497981)>
+    <ggplot: (-9223372036572546644)>
 
 
 

@@ -17,7 +17,7 @@ In this chapter, you'll learn about the "verbs" in the siuba package. The first 
 <aside class="notes">
 
 
-You use filter when you want to keep only at a subset of your observations, based on a particular condition.
+You use filter when you want to keep only a subset of your observations, based on a particular condition.
 
 Filtering data is a common first step in an analysis.
 
@@ -426,7 +426,7 @@ You didn't need quotes around a number like 1, but you do around text.
 We can specify multiple conditions in the filter.
 
 Each of the conditions is separated by a comma: here we are saying we want only
-the one observation for poisition 1, comma, where the country is the United States.
+the one observation for position 1, comma, where the country is the United States.
 
 Each of these equals equals expressions is called an argument.
 This kind of double filter is useful for extracting a single observation you're interested in.

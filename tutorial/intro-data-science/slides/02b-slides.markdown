@@ -17,7 +17,7 @@
 
 
 
-    <ggplot: (-9223372036546737527)>
+    <ggplot: (285893615)>
 
 
 <aside class="notes">
@@ -51,7 +51,7 @@ Adding labels to the point will let us identify songs in the plot.
 
 
 
-    <ggplot: (305436564)>
+    <ggplot: (-9223372036545068926)>
 
 
 <aside class="notes">
@@ -87,7 +87,7 @@ For example, relative to other songs:
 
 
 
-    <ggplot: (-9223372036549221218)>
+    <ggplot: (307217072)>
 
 
 <aside class="notes">
@@ -116,7 +116,7 @@ Notice the words in front don't cover other words as much, but it can also be ha
 
 
 
-    <ggplot: (-9223372036549059079)>
+    <ggplot: (-9223372036547558782)>
 
 
 <aside class="notes">

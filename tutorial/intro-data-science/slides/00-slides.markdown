@@ -6,7 +6,7 @@
 
 Hi, I'm Michael--the creator of siuba, a library for data analysis in Python.
 
-In this course, you'll use Python to explore and vizualize data.
+In this course, you'll use Python to explore and visualize data.
 
 The course is designed for people who have never programmed before,
 and anyone interested in siuba!
@@ -363,7 +363,7 @@ The course is interactive: between short lessons you'll complete interactive exe
 
 
 
-    <ggplot: (302434950)>
+    <ggplot: (301754365)>
 
 
 <aside class="notes">
@@ -544,7 +544,7 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 
 
 
-    <ggplot: (281362429)>
+    <ggplot: (301896568)>
 
 
 <aside class="notes">
@@ -571,7 +571,7 @@ The next action, `ggplot(...)`, gets ready to make a plot, based on the data in 
 
 
 
-    <ggplot: (302434901)>
+    <ggplot: (-9223372036552937819)>
 
 
 <aside class="notes">

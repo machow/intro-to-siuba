@@ -135,7 +135,7 @@ import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
 
 This exercise is a case study on selecting extreme differences between two features, such as energy and acousticness.
 
-At the end of the case study, you'll prompted to add code!
+At the end of the case study, you'll be prompted to add code!
 
 Generally tracks with higher energy tend to be less acoustic, as shown in the plot below.
 
@@ -151,18 +151,14 @@ Generally tracks with higher energy tend to be less acoustic, as shown in the pl
 
 <template v-slot:output>
 
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
-    findfont: Font family ['Noto Sans CJK JP'] not found. Falling back to DejaVu Sans.
 
-
-
-![png](./02b-geoms_files/02b-geoms_7_1.png)
+![png](./02b-geoms_files/02b-geoms_7_0.png)
 
 
 
 
 
-    <ggplot: (-9223372036576871536)>
+    <ggplot: (-9223372036578267595)>
 
 
 
