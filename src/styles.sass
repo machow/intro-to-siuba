@@ -1,0 +1,154 @@
+body
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height);
+    //color: var(--color-front);
+    //background: var(--color-back);
+
+\:root
+    --font-primary: Lato, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+    --font-display: 'IBM Plex Sans', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+    --font-code: 'IBM Plex Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace
+
+    // Font Sizes
+    --font-size-xs: .65rem
+    --font-size-sm: .8rem
+    --font-size-md: 1rem
+    --font-size-lg: 1.2rem
+    --font-size-xl: 1.4rem
+
+    // Line heights
+    --line-height: 1.6
+
+    // Colors
+    --color-back: #fff
+    --color-front: #444
+    --color-theme: #09a3d5
+    --color-theme-contrast: #fff
+    --color-subtle-dark: #777
+    --color-subtle-medium: #eee
+    --color-subtle-light: #f9f9f9
+    --color-background-code: #7a818117
+
+    --color-button-primary: #29c15b
+    --color-button-primary-contrast: #fff
+    --color-button-secondary: #cdcdd4
+    --color-button-secondary-contrast: #686873
+    --color-button-danger: #d21313
+    --color-button-danger-contrast: #fff
+
+    --color-correct-light: #e3fde8
+    --color-correct-dark: #007737
+    --color-incorrect-light: #fde7e7
+    --color-incorrect-dark: #d21313
+
+    // Syntax Highlighting
+    // based on https://github.com/sdras/night-owl-vscode-theme
+    --syntax-background: #f7f7f7
+    --syntax-text: #403f53
+    --syntax-selected-background: #7a81812b
+    --syntax-comment: #989fb1
+    --syntax-tag: #994cc3
+    --syntax-number: #aa0982
+    --syntax-selector: #994cc3
+    --syntax-operator: #994cc3
+    --syntax-function: #4876d6
+    --syntax-keyword: #994cc3
+    --syntax-regex: #5ca7e4
+
+    --ansi-green: #12dc55
+    --ansi-red: #f76464
+    --ansi-cyan: #00d8ff
+
+    // Video player
+    --plyr-color-main: var(--color-theme)
+    --plyr-font-family: var(--font-primary)
+
+    // Sizes
+    --width-container: 800px
+    --size-profile-pic: 125px
+    --border-radius: 5px
+
+    --syntax-background: #f7f7f7
+    --jp-editor-selected-background: #d9d9d9;
+    --jp-editor-selected-focused-background: #d7d4f0;
+    --jp-editor-cursor-color: black;
+    --jp-mirror-editor-keyword-color: #008000;
+    --jp-mirror-editor-atom-color: #88f;
+    --jp-mirror-editor-number-color: #080;
+    --jp-mirror-editor-def-color: #00f;
+    --jp-mirror-editor-variable-color: var(--md-grey-900);
+    --jp-mirror-editor-variable-2-color: #05a;
+    --jp-mirror-editor-variable-3-color: #085;
+    --jp-mirror-editor-punctuation-color: #05a;
+    --jp-mirror-editor-property-color: #05a;
+    --jp-mirror-editor-operator-color: #aa22ff;
+    --jp-mirror-editor-comment-color: #408080;
+    --jp-mirror-editor-string-color: #ba2121;
+    --jp-mirror-editor-string-2-color: #708;
+    --jp-mirror-editor-meta-color: #aa22ff;
+    --jp-mirror-editor-qualifier-color: #555;
+    --jp-mirror-editor-builtin-color: inherit;//#008000;
+    --jp-mirror-editor-bracket-color: #997;
+    --jp-mirror-editor-tag-color: #170;
+    --jp-mirror-editor-attribute-color: #00c;
+    --jp-mirror-editor-header-color: blue;
+    --jp-mirror-editor-quote-color: #090;
+    --jp-mirror-editor-link-color: #00c;
+    --jp-mirror-editor-error-color: #f00;
+    --jp-mirror-editor-hr-color: #999;
+
+
+/* TODO: move into own index file */
+code[class*="language-"], pre[class*="language-"]
+    width: 100%
+    display: block
+    position: relative
+    font-size: var(--font-size-md)
+    font-family: var(--font-code)
+
+
+
+pre[class*="language-"]
+    padding-bottom: 8px
+    padding-top: 8px
+    background-color: var(--syntax-background)
+    border-radius: var(--border-radius)
+
+pre > code[class*="language-"]
+    font-size: inherit
+    border-radius: inherit
+
+[class*="language-"] .token
+    &.comment, &.prolog, &.doctype, &.cdata, &.punctuation
+        color: var(--jp-mirror-editor-comment-color)
+
+    &.property
+        color: var(--jp-mirror-editor-property-color)
+
+    &.tag, &.constant, &.symbol
+        color: var(--jp-mirror-editor-operator-color)
+
+    &.boolean, &.number
+        color: var(--jp-mirror-editor-number-color)
+
+    &.builtin
+        color: var(--jp-mirror-editor-builtin-color)
+
+    &.selector, &.attr-name, &.string, &.char
+        color: var(--jp-mirror-editor-string-color)
+
+    &.variable
+        color: var(--jp-mirror-editor-variable-color)
+
+    &.operator, &.entity, &.url, 
+        color: var(--jp-mirror-editor-operator-color)
+
+    &.atrule, &.attr-value, &.function
+        color: var(--jp-mirror-editor-def-color)
+
+    &.regex, &.important
+        color: var(--jp-mirror-editor-operator-color)
+
+    &.keyword
+        color: var(--jp-mirror-editor-keyword-color)
