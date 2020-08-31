@@ -363,7 +363,7 @@ The course is interactive: between short lessons you'll complete interactive exe
 
 
 
-    <ggplot: (301754365)>
+    <ggplot: (-9223372036552900590)>
 
 
 <aside class="notes">
@@ -544,7 +544,7 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 
 
 
-    <ggplot: (301896568)>
+    <ggplot: (301903971)>
 
 
 <aside class="notes">
@@ -571,7 +571,7 @@ The next action, `ggplot(...)`, gets ready to make a plot, based on the data in 
 
 
 
-    <ggplot: (-9223372036552937819)>
+    <ggplot: (302057592)>
 
 
 <aside class="notes">
