@@ -1,0 +1,76 @@
+{%- extends 'markdown.tpl' -%}
+
+
+{% block body %}
+
+<Notebook
+  v-slot="nb"
+  {% for k, v in nb.metadata.get("purview", {}).items() -%}
+    {{k}}="{{v}}"
+  {% endfor %}>
+
+{{super()}}
+
+</Notebook>
+
+{% endblock body %}
+
+
+
+{% block codecell %}
+{%- set tags = cell.metadata.get('tags', []) -%}
+{%- set locked = 'locked' if 'input-lock' in tags else '' -%}
+{%- set setup = ':onReady="nb.updateSetupCode"' if 'setup' in tags else '' -%}
+{% if 'input-details' in tags %}
+<details v-fix-codemirror v-show="nb.debut">
+{%- endif %}
+{% if 'input-hide' in tags or 'hide-input' in tags -%}
+{{ super() }}
+{% else -%}
+{% if 'setup' not in tags -%}
+{%- set ex_name = 'ex="' + cell.metadata.get('exercise_name', 'a') + '"' -%}
+{%- set ex_indx = ':exIndx="' + cell.metadata.get('exercise_index', '0') + '"' -%}
+<code-cell {{locked}} :status="nb.status" :onExecute="nb.execute" {{setup}} {{ex_name}} {{ex_indx}} language="
+{%- else -%}
+<code-cell {{locked}} :status="nb.status" :onExecute="nb.execute" {{setup}} {{ex_name}} language="
+{%- endif -%}
+{%- if 'magics_language' in cell.metadata  -%}
+    {{ cell.metadata.magics_language}}
+{%- elif 'name' in nb.metadata.get('language_info', {}) -%}
+    {{ nb.metadata.language_info.name }}
+{%- endif %}">
+{{ super() }}
+
+</code-cell>
+{% endif %}
+{%- if 'input-details' in tags -%}
+</details>
+{% endif %}
+{% endblock codecell %}
+
+
+{% block input %}
+{%- set tags = cell.metadata.get('tags', []) -%}
+
+{%- if 'empty-code' in tags %}
+<pre><code>{{ cell.source }}</code></pre>
+{%- elif 'input-hide' not in tags %}
+{% filter indent(4) %}
+{{- cell.source }}
+{% endfilter %}
+{% endif %}
+{% endblock input %}
+
+
+{% block outputs %}
+{%- set tags = cell.metadata.get('tags', []) -%}
+{%- if 'input-hide' in tags or 'hide-input' in tags -%}
+{{ super() }}
+{%- else -%}
+<template v-slot:output>
+{{ super() }}
+</template>
+{%- endif -%}
+{% endblock outputs %}
+
+
