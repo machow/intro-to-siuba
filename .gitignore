@@ -1,3 +1,6 @@
+# sketch design files
+*.sketch
+
 # vim files
 *.sw[po]
 
