@@ -306,27 +306,27 @@ Their measures for a song include:
 
 <div>
 <style scoped>
-.container{
+.container-00 {
     display: flex;
 }
-.col{
+.col-00 {
     flex: 1;
     height: 450px;
 }
-img {
+img.col-00 {
     max-height: 50%;
 }
 </style>
 
-<div class="container" height="450px">
+<div class="container-00" height="450px">
 
-<div class="col" width="50%">
+<div class="col-00" width="50%">
 <img src="plot-line.png">
 <img src="plot-hist.png">
 
 </div>
 
-<div class="col" width="50%">
+<div class="col-00" width="50%">
 <img src="plot-point.png">
 <img src="plot-box.png">
 
@@ -363,7 +363,7 @@ The course is interactive: between short lessons you'll complete interactive exe
 
 
 
-    <ggplot: (-9223372036552900590)>
+    <ggplot: (-9223372036547727770)>
 
 
 <aside class="notes">
@@ -544,7 +544,7 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 
 
 
-    <ggplot: (301903971)>
+    <ggplot: (-9223372036547685523)>
 
 
 <aside class="notes">
@@ -571,7 +571,7 @@ The next action, `ggplot(...)`, gets ready to make a plot, based on the data in 
 
 
 
-    <ggplot: (302057592)>
+    <ggplot: (307223514)>
 
 
 <aside class="notes">
