@@ -32,10 +32,11 @@ jobs:
         run: |
           ipython kernel install --user --name "venv-siublocks-org"
 
-      - name: Build content and show diff
+      - name: "📝 Build content"
         run: | 
           make notebooks slides
-          git diff --stat
+      - name: "🐣 Check content diff"
+        run : git diff --stat
 
       - name: Upload content
         uses: actions/upload-artifact@v2
@@ -46,7 +47,9 @@ jobs:
       # gridsome site build
       - uses: actions/setup-node@v1
       - run: npm install
-      - run: BUILD_ENV=production npm run build
+
+      - name: "📝 Build gridsome site"
+        run: BUILD_ENV=production npm run build
 
       - name: Upload site build
         uses: actions/upload-artifact@v2
