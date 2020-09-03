@@ -185,14 +185,18 @@ We used a plot and intuition to judge who tended to have highest energy and vale
 
 <template v-slot:output>
 
-
-![png](./03b-group-by_files/03b-group-by_11_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (-9223372036555294755)>
+![png](./03b-group-by_files/03b-group-by_11_1.png)
+
+
+
+
+
+    <ggplot: (-9223372036553513612)>
 
 
 

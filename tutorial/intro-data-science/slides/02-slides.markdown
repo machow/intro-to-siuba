@@ -23,14 +23,18 @@ In this chapter, you'll learn the essential skill of data visualization using th
 
 # Visualizing with plotnine
 
-
-![png](02-slides_files/02-slides_6_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (273997113)>
+![png](02-slides_files/02-slides_6_1.png)
+
+
+
+
+
+    <ggplot: (-9223372036580219339)>
 
 
 <aside class="notes">
@@ -285,7 +289,7 @@ But this one has only 27 rows: one for each track by Billie Eilish in the origin
 
 
 
-    <ggplot: (-9223372036559575594)>
+    <ggplot: (-9223372036558685717)>
 
 
 <aside class="notes">

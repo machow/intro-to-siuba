@@ -95,14 +95,18 @@ Use the code cell below to recreate it.
 
 
 
-
-![png](./02c-aesthetics_files/02c-aesthetics_4_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (283988267)>
+![png](./02c-aesthetics_files/02c-aesthetics_4_1.png)
+
+
+
+
+
+    <ggplot: (-9223372036567986274)>
 
 
 

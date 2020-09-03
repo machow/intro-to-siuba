@@ -25,7 +25,7 @@ In this lesson, you'll use plotnine aesthetics to set more than just the positio
 
 
 
-    <ggplot: (273832922)>
+    <ggplot: (302597885)>
 
 
 <aside class="notes">
@@ -204,7 +204,7 @@ Now you'll learn to add two more aesthetics--color and size--to communicate even
 
 
 
-    <ggplot: (-9223372036559615593)>
+    <ggplot: (-9223372036551912097)>
 
 
 <aside class="notes">
@@ -239,7 +239,7 @@ This communicates that lower energy tracks (toward the left of the plot) tend to
 
 
 
-    <ggplot: (-9223372036559607955)>
+    <ggplot: (302870960)>
 
 
 <aside class="notes">
@@ -275,14 +275,18 @@ and size: to communicate information about four variables in your dataset.
 )
 ```
 
-
-![png](02c-slides_files/02c-slides_17_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (295210567)>
+![png](02c-slides_files/02c-slides_17_1.png)
+
+
+
+
+
+    <ggplot: (302913165)>
 
 
 <aside class="notes">
