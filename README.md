@@ -8,6 +8,20 @@
 * [Rmd folder with lesson content](tutorial/intro-data-science/Rmd)
 * [slides folder](tutorial/intro-data-science/slides)
 
+## How to Make Updates
+
+This course is automatically staged and deployed using github actions.
+
+* [Staging site](http://staging-learn.siuba.org/): updated when a change is made on the master or staging branches.
+* [Production site](http://learn.siuba.org/): updated when a release is made.
+
+### Deploying
+
+1. Commit your changes to master or staging.
+2. Once the github action runs, look for the entry called `🐣: Check content diff`. This shows which files changed when the content was rebuilt.
+3. For changed files, look on http://staging-learn.siuba.org/ to see that the changes make sense.
+4. Create a release, which will trigger a rebuild and deployment!
+
 ## Roadmap
 
 ### Before release
