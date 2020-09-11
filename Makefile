@@ -9,7 +9,7 @@ $(INTRO_DS_DIR)/Rmd/%.Rmd: $(INTRO_DS_DIR)/setup.py
 	jupytext --sync $@
 	jupyter nbconvert --to ipynb --inplace \
 		--NotebookExporter.preprocessors="['nbmarkbook.SetupCodePreprocessor']" \
-		$@
+		$(INTRO_DS_DIR)/notebooks/$*.ipynb
 	jupytext --sync $@
 
 
