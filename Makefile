@@ -4,7 +4,7 @@ INTRO_DS_DIR:=tutorial/intro-data-science
 SLIDES:=$(patsubst %.ipynb,%.markdown,$(wildcard $(SLIDES_DIR)/*.ipynb))
 
 
-$(INTRO_DS_DIR)/notebooks/%.Rmd: $(INTRO_DS_DIR)/setup.py
+$(INTRO_DS_DIR)/Rmd/%.Rmd: $(INTRO_DS_DIR)/setup.py
 	# update setup code
 	jupytext --sync $@
 	jupyter nbconvert --to ipynb --inplace \
