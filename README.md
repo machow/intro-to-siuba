@@ -18,7 +18,7 @@ This course is automatically staged and deployed using github actions.
 ### Deploying
 
 1. Commit your changes to master or staging.
-2. Once the github action runs, look for the entry called `🐣: Check content diff`. This shows which files changed when the content was rebuilt.
+2. Once the github action runs, look for the entry called `🐣: Check content diff`, showing which files changed after content rebuild.
 3. For changed files, look on http://staging-learn.siuba.org/ to see that the changes make sense.
 4. Create a release, which will trigger a rebuild and deployment!
 
