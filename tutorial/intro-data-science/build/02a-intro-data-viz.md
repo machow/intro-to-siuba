@@ -207,7 +207,7 @@ Note that you could swap out `roddy` for any of the other two variables above.
 
 
 
-    <ggplot: (302456619)>
+    <ggplot: (296091172)>
 
 
 
@@ -261,7 +261,7 @@ Make a plot below, and come up with an answer you might share with another perso
 
 
 
-    <ggplot: (-9223372036551312310)>
+    <ggplot: (-9223372036558665398)>
 
 
 

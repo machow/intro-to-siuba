@@ -17,7 +17,7 @@
 
 
 
-    <ggplot: (285893615)>
+    <ggplot: (302638831)>
 
 
 <aside class="notes">
@@ -44,14 +44,18 @@ Adding labels to the point will let us identify songs in the plot.
 )
 ```
 
-
-![png](02b-slides_files/02b-slides_6_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (-9223372036545068926)>
+![png](02b-slides_files/02b-slides_6_1.png)
+
+
+
+
+
+    <ggplot: (302647265)>
 
 
 <aside class="notes">
@@ -80,14 +84,18 @@ For example, relative to other songs:
 )
 ```
 
-
-![png](02b-slides_files/02b-slides_9_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (307217072)>
+![png](02b-slides_files/02b-slides_9_1.png)
+
+
+
+
+
+    <ggplot: (300168147)>
 
 
 <aside class="notes">
@@ -109,14 +117,18 @@ Notice the words in front don't cover other words as much, but it can also be ha
 )
 ```
 
-
-![png](02b-slides_files/02b-slides_12_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (-9223372036547558782)>
+![png](02b-slides_files/02b-slides_12_1.png)
+
+
+
+
+
+    <ggplot: (300223012)>
 
 
 <aside class="notes">

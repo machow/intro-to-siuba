@@ -1,0 +1,97 @@
+name: Deploy staging
+on:
+  push:
+    branches:
+      - 'staging'
+      - 'master'
+
+jobs:
+  build-site:
+    name: "Build site"
+    runs-on: ubuntu-18.04
+    steps:
+      # checkout repo
+      - uses: actions/checkout@v2
+
+      # fonts
+      - name: install fonts
+        run: |
+          sudo apt-get install fonts-noto-cjk
+          fc-cache
+
+      # python
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7' 
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+          pip install -e ./utils/siututor ./utils/music_top200 ./utils/nbmarkbook
+      - name: Install kernel for nbconvert
+        run: |
+          ipython kernel install --user --name "venv-siublocks-org"
+
+      - name: "📝: Build content"
+        run: | 
+          make notebooks slides
+      - name: "🐣: Check content diff"
+        run : git diff --stat
+
+      - name: Upload content
+        uses: actions/upload-artifact@v2
+        with:
+          name: tutorial
+          path: tutorial
+
+      # gridsome site build
+      - uses: actions/setup-node@v1
+      - run: npm install
+
+      - name: "📝: Build gridsome site"
+        run: BUILD_ENV=production npm run build
+
+      - name: Upload site build
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+
+  deploy-staging:
+    name: "Deploy staging site to github pages"
+    needs: build-site
+    if:  github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Download site build
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+      - name: Add staging-learn CNAME
+        run: |
+          echo "staging-learn.siuba.org" > dist/CNAME
+      - name: gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_STAGING_DEPLOY_KEY }}
+          publish_dir: dist
+          external_repository: machow/intro-to-siuba-staging
+
+  deploy-prod:
+    name: "Deploy site to github pages"
+    needs: build-site
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Download site build
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+      - name: gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: dist

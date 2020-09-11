@@ -112,14 +112,18 @@ Then, answer the questions below.
 
 <template v-slot:output>
 
-
-![png](./02d-facets_files/02d-facets_5_0.png)
-
-
+    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
+      if pdtypes.is_categorical(arr):
 
 
 
-    <ggplot: (-9223372036572546644)>
+![png](./02d-facets_files/02d-facets_5_1.png)
+
+
+
+
+
+    <ggplot: (273400170)>
 
 
 

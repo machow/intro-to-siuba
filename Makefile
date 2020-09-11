@@ -3,6 +3,16 @@ SLIDES_DIR:=tutorial/intro-data-science/slides
 INTRO_DS_DIR:=tutorial/intro-data-science
 SLIDES:=$(patsubst %.ipynb,%.markdown,$(wildcard $(SLIDES_DIR)/*.ipynb))
 
+
+$(INTRO_DS_DIR)/notebooks/%.Rmd: $(INTRO_DS_DIR)/setup.py
+	# update setup code
+	jupytext --sync $@
+	jupyter nbconvert --to ipynb --inplace \
+		--NotebookExporter.preprocessors="['nbmarkbook.SetupCodePreprocessor']" \
+		$@
+	jupytext --sync $@
+
+
 $(INTRO_DS_DIR)/build/%.md: $(INTRO_DS_DIR)/Rmd/%.Rmd
 	jupytext --sync --execute $<
 	jupyter nbconvert \
@@ -22,14 +32,6 @@ $(INTRO_DS_DIR)/slides/%.markdown: $(SLIDES_DIR)/%.ipynb $(SLIDES_DIR)/slides_te
 	jupyter nbconvert --to metaexporter --template $(SLIDES_DIR)/slides_template.j2 --execute $<
 	# for some reason, uses extension .slides.html :/
 	#mv $(patsubst %.html,%.slides.html,$@) $@
-
-update-setup-code:
-	#jupyter nbconvert tutorial/intro-data-science/ipynb/* --to ipynb --inplace 
-	jupyter nbconvert --to ipynb --inplace \
-		--NotebookExporter.preprocessors="['nbmarkbook.SetupCodePreprocessor']" \
-		tutorial/intro-data-science/notebooks/*.ipynb #01b-filter.ipynb
-	jupytext --sync tutorial/intro-data-science/notebooks/*.ipynb
-
 
 
 notebooks: $(NOTEBOOKS)
