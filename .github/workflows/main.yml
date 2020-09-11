@@ -4,7 +4,9 @@ on:
     branches:
       - 'staging'
       - 'master'
-
+  release:
+    types:
+      - 'published'
 jobs:
   build-site:
     name: "Build site"
@@ -82,7 +84,7 @@ jobs:
   deploy-prod:
     name: "Deploy site to github pages"
     needs: build-site
-    if: github.ref == 'refs/heads/master'
+    if: github.event_name == 'release'
     runs-on: ubuntu-18.04
     steps:
       - name: Download site build
