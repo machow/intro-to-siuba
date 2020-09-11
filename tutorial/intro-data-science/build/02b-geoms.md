@@ -71,6 +71,8 @@ exercise_pars:
         lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
     )
     
+    # remove the <ggplot: (528...)> printout
+    html_formatter.for_type(ggplot, lambda g: "")
     
 
 
@@ -158,7 +160,7 @@ Generally tracks with higher energy tend to be less acoustic, as shown in the pl
 
 
 
-    <ggplot: (-9223372036581161272)>
+
 
 
 

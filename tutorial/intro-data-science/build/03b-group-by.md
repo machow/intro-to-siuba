@@ -61,6 +61,8 @@ chunk: summarize
         lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
     )
     
+    # remove the <ggplot: (528...)> printout
+    html_formatter.for_type(ggplot, lambda g: "")
     
 
 
@@ -196,7 +198,7 @@ We used a plot and intuition to judge who tended to have highest energy and vale
 
 
 
-    <ggplot: (-9223372036553513612)>
+
 
 
 
