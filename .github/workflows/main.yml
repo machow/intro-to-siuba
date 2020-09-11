@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - 'staging'
-      - 'master'
   release:
     types:
       - 'published'
