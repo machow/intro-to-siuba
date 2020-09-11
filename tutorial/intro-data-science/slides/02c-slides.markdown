@@ -25,7 +25,7 @@ In this lesson, you'll use plotnine aesthetics to set more than just the positio
 
 
 
-    <ggplot: (302597885)>
+
 
 
 <aside class="notes">
@@ -204,7 +204,7 @@ Now you'll learn to add two more aesthetics--color and size--to communicate even
 
 
 
-    <ggplot: (-9223372036551912097)>
+
 
 
 <aside class="notes">
@@ -239,7 +239,7 @@ This communicates that lower energy tracks (toward the left of the plot) tend to
 
 
 
-    <ggplot: (302870960)>
+
 
 
 <aside class="notes">
@@ -286,7 +286,7 @@ and size: to communicate information about four variables in your dataset.
 
 
 
-    <ggplot: (302913165)>
+
 
 
 <aside class="notes">

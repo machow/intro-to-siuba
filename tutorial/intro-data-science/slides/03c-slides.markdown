@@ -33,7 +33,7 @@ visualizations, by returning to the plotnine package from Chapter 2.
 
 
 
-    <ggplot: (278400418)>
+
 
 
 <aside class="notes">
@@ -187,7 +187,7 @@ graphing countries in a scatter plot, even though it's a new dataset.
 
 
 
-    <ggplot: (299605547)>
+
 
 
 <aside class="notes">
@@ -219,7 +219,7 @@ It's hard to get a a sense of how many streams the last position track had, sinc
 
 
 
-    <ggplot: (-9223372036555181729)>
+
 
 
 <aside class="notes">
@@ -369,7 +369,7 @@ to see how much countries are streaming top tracks on different continents conti
 
 
 
-    <ggplot: (301171695)>
+
 
 
 <aside class="notes">

@@ -34,7 +34,7 @@ In this chapter, you'll learn the essential skill of data visualization using th
 
 
 
-    <ggplot: (-9223372036580219339)>
+
 
 
 <aside class="notes">
@@ -289,7 +289,7 @@ But this one has only 27 rows: one for each track by Billie Eilish in the origin
 
 
 
-    <ggplot: (-9223372036558685717)>
+
 
 
 <aside class="notes">

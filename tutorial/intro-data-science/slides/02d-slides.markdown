@@ -156,7 +156,7 @@ For this example, we'll use Spotify top 200 track data for countries in Asia.
 
 
 
-    <ggplot: (297267208)>
+
 
 
 <aside class="notes">
@@ -194,7 +194,7 @@ A facetted plot could help here, by giving each country its own small panel.
 
 
 
-    <ggplot: (297294705)>
+
 
 
 <aside class="notes">
