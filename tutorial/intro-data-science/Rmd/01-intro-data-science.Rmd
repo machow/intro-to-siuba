@@ -97,6 +97,11 @@ import slides from '../slides/00-slides.markdown'
 
 ### Exercise 1: inspecting music data
 
+
+Use the dropdown box below to change the code.
+Try choosing "United States" from the dropdown, then click run.
+This should return only the top 200 hits from the United States.
+
 ```{python active="", eval=FALSE}
 
 import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
