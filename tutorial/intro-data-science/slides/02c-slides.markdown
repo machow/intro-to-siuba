@@ -93,7 +93,7 @@ billie
       <td>170.852</td>
     </tr>
     <tr>
-      <th>2900</th>
+      <th>2899</th>
       <td>Billie Eilish</td>
       <td>WHEN WE ALL...</td>
       <td>listen befo...</td>
@@ -106,7 +106,7 @@ billie
       <td>242.652</td>
     </tr>
     <tr>
-      <th>2951</th>
+      <th>2950</th>
       <td>Billie Eilish</td>
       <td>lovely (wit...</td>
       <td>lovely (wit...</td>
@@ -132,7 +132,7 @@ billie
       <td>...</td>
     </tr>
     <tr>
-      <th>24858</th>
+      <th>24857</th>
       <td>Billie Eilish</td>
       <td>WHEN WE ALL...</td>
       <td>ilomilo</td>
@@ -145,7 +145,7 @@ billie
       <td>156.371</td>
     </tr>
     <tr>
-      <th>24998</th>
+      <th>24997</th>
       <td>Billie Eilish</td>
       <td>WHEN I WAS ...</td>
       <td>WHEN I WAS ...</td>
@@ -158,7 +158,7 @@ billie
       <td>270.520</td>
     </tr>
     <tr>
-      <th>25148</th>
+      <th>25147</th>
       <td>Billie Eilish</td>
       <td>come out an...</td>
       <td>come out an...</td>
@@ -275,12 +275,8 @@ and size: to communicate information about four variables in your dataset.
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](02c-slides_files/02c-slides_17_1.png)
+![png](02c-slides_files/02c-slides_17_0.png)
 
 
 

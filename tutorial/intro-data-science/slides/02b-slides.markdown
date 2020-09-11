@@ -44,12 +44,8 @@ Adding labels to the point will let us identify songs in the plot.
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](02b-slides_files/02b-slides_6_1.png)
+![png](02b-slides_files/02b-slides_6_0.png)
 
 
 
@@ -84,12 +80,8 @@ For example, relative to other songs:
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](02b-slides_files/02b-slides_9_1.png)
+![png](02b-slides_files/02b-slides_9_0.png)
 
 
 
@@ -117,12 +109,8 @@ Notice the words in front don't cover other words as much, but it can also be ha
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](02b-slides_files/02b-slides_12_1.png)
+![png](02b-slides_files/02b-slides_12_0.png)
 
 
 

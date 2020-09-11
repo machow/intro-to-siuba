@@ -32,14 +32,7 @@ chunk: visualize
     theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
     
     # data --------------
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
-    music_top200 = pd.read_csv(fname)
-    
-    # tracks
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
-    track_features = pd.read_csv(fname)
+    from music_top200 import music_top200, track_features
     
     # student support ----------
     from siuba import pipe
@@ -114,12 +107,8 @@ Then, answer the questions below.
 
 <template v-slot:output>
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](./02d-facets_files/02d-facets_5_1.png)
+![png](./02d-facets_files/02d-facets_5_0.png)
 
 
 
