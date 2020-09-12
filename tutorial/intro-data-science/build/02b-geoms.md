@@ -42,14 +42,7 @@ exercise_pars:
     theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
     
     # data --------------
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
-    music_top200 = pd.read_csv(fname)
-    
-    # tracks
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
-    track_features = pd.read_csv(fname)
+    from music_top200 import music_top200, track_features
     
     # student support ----------
     from siuba import pipe
@@ -71,6 +64,8 @@ exercise_pars:
         lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
     )
     
+    # remove the <ggplot: (528...)> printout
+    html_formatter.for_type(ggplot, lambda g: "")
     
 
 
@@ -158,7 +153,7 @@ Generally tracks with higher energy tend to be less acoustic, as shown in the pl
 
 
 
-    <ggplot: (-9223372036581161272)>
+
 
 
 
@@ -203,7 +198,7 @@ In order to find high energy and acousticness songs like this, I used the follow
   </thead>
   <tbody>
     <tr>
-      <th>23990</th>
+      <th>23989</th>
       <td>MC Kevin o Chris</td>
       <td>Vamos pra Gaiola</td>
       <td>Vamos pra Gaiola</td>
@@ -216,7 +211,7 @@ In order to find high energy and acousticness songs like this, I used the follow
       <td>161.600</td>
     </tr>
     <tr>
-      <th>5211</th>
+      <th>5210</th>
       <td>ScHoolboy Q</td>
       <td>CrasH Talk</td>
       <td>Black Folk</td>
@@ -229,7 +224,7 @@ In order to find high energy and acousticness songs like this, I used the follow
       <td>147.040</td>
     </tr>
     <tr>
-      <th>24929</th>
+      <th>24928</th>
       <td>MC Kevin o Chris</td>
       <td>Eu Vou pro Baile da Gaiola</td>
       <td>Eu Vou pro Baile da Gaiola</td>
@@ -255,7 +250,7 @@ In order to find high energy and acousticness songs like this, I used the follow
       <td>...</td>
     </tr>
     <tr>
-      <th>18951</th>
+      <th>18950</th>
       <td>Foo Fighters</td>
       <td>There Is Nothing Left To Lose</td>
       <td>Learn to Fly</td>
@@ -268,7 +263,7 @@ In order to find high energy and acousticness songs like this, I used the follow
       <td>235.293</td>
     </tr>
     <tr>
-      <th>20425</th>
+      <th>20424</th>
       <td>Foo Fighters</td>
       <td>One By One (Expanded Edition)</td>
       <td>Times Like These</td>
@@ -281,7 +276,7 @@ In order to find high energy and acousticness songs like this, I used the follow
       <td>265.560</td>
     </tr>
     <tr>
-      <th>21871</th>
+      <th>21870</th>
       <td>Turmion Kätilöt</td>
       <td>Global Warning</td>
       <td>Jumalauta</td>

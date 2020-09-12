@@ -22,18 +22,14 @@ visualizations, by returning to the plotnine package from Chapter 2.
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](03c-slides_files/03c-slides_4_1.png)
+![png](03c-slides_files/03c-slides_4_0.png)
 
 
 
 
 
-    <ggplot: (278400418)>
+
 
 
 <aside class="notes">
@@ -187,7 +183,7 @@ graphing countries in a scatter plot, even though it's a new dataset.
 
 
 
-    <ggplot: (299605547)>
+
 
 
 <aside class="notes">
@@ -219,7 +215,7 @@ It's hard to get a a sense of how many streams the last position track had, sinc
 
 
 
-    <ggplot: (-9223372036555181729)>
+
 
 
 <aside class="notes">
@@ -358,18 +354,14 @@ to see how much countries are streaming top tracks on different continents conti
    + labs(title = "Top 200 hits - max streams overall"))
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](03c-slides_files/03c-slides_24_1.png)
+![png](03c-slides_files/03c-slides_24_0.png)
 
 
 
 
 
-    <ggplot: (301171695)>
+
 
 
 <aside class="notes">

@@ -32,14 +32,7 @@ chunk: visualize
     theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
     
     # data --------------
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
-    music_top200 = pd.read_csv(fname)
-    
-    # tracks
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
-    track_features = pd.read_csv(fname)
+    from music_top200 import music_top200, track_features
     
     # student support ----------
     from siuba import pipe
@@ -61,6 +54,8 @@ chunk: visualize
         lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
     )
     
+    # remove the <ggplot: (528...)> printout
+    html_formatter.for_type(ggplot, lambda g: "")
     
 
 
@@ -123,7 +118,7 @@ Read through the code and plot, and then modify it to answer the question beneat
   </thead>
   <tbody>
     <tr>
-      <th>1432</th>
+      <th>1431</th>
       <td>ITZY</td>
       <td>IT'z Different</td>
       <td>달라달라 (DALLA DALLA)</td>
@@ -136,7 +131,7 @@ Read through the code and plot, and then modify it to answer the question beneat
       <td>199.874</td>
     </tr>
     <tr>
-      <th>21149</th>
+      <th>21148</th>
       <td>ITZY</td>
       <td>IT'z Different</td>
       <td>달라달라 DALLA DALLA</td>
@@ -149,7 +144,7 @@ Read through the code and plot, and then modify it to answer the question beneat
       <td>199.874</td>
     </tr>
     <tr>
-      <th>22389</th>
+      <th>22388</th>
       <td>ITZY</td>
       <td>It'z Me</td>
       <td>WANNABE</td>
@@ -162,7 +157,7 @@ Read through the code and plot, and then modify it to answer the question beneat
       <td>191.242</td>
     </tr>
     <tr>
-      <th>25288</th>
+      <th>25287</th>
       <td>ITZY</td>
       <td>IT'z ICY</td>
       <td>ICY</td>
@@ -207,7 +202,7 @@ Note that you could swap out `roddy` for any of the other two variables above.
 
 
 
-    <ggplot: (296091172)>
+
 
 
 
@@ -261,7 +256,7 @@ Make a plot below, and come up with an answer you might share with another perso
 
 
 
-    <ggplot: (-9223372036558665398)>
+
 
 
 
@@ -330,7 +325,7 @@ Here is the track data sorted by energy.
       <td>36.038</td>
     </tr>
     <tr>
-      <th>5996</th>
+      <th>5995</th>
       <td>DMS</td>
       <td>Prepáčte</td>
       <td>Nič</td>
@@ -343,7 +338,7 @@ Here is the track data sorted by energy.
       <td>37.355</td>
     </tr>
     <tr>
-      <th>16690</th>
+      <th>16689</th>
       <td>Peter Simon</td>
       <td>Snowrain</td>
       <td>Snowrain</td>
@@ -369,7 +364,7 @@ Here is the track data sorted by energy.
       <td>...</td>
     </tr>
     <tr>
-      <th>22696</th>
+      <th>22695</th>
       <td>Nino Xypolitas</td>
       <td>Epireastika</td>
       <td>Eime Enas Allos - Original</td>
@@ -382,7 +377,7 @@ Here is the track data sorted by energy.
       <td>214.693</td>
     </tr>
     <tr>
-      <th>17073</th>
+      <th>17072</th>
       <td>Otira</td>
       <td>Soundboy Burnin’</td>
       <td>Soundboy Burnin’</td>
@@ -395,7 +390,7 @@ Here is the track data sorted by energy.
       <td>173.846</td>
     </tr>
     <tr>
-      <th>11070</th>
+      <th>11069</th>
       <td>Scooter</td>
       <td>No Time To Chill</td>
       <td>How Much Is the Fish?</td>
@@ -409,7 +404,7 @@ Here is the track data sorted by energy.
     </tr>
   </tbody>
 </table>
-<p>25322 rows × 10 columns</p>
+<p>25321 rows × 10 columns</p>
 
 
 

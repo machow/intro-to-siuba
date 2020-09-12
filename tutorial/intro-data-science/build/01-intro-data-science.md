@@ -48,14 +48,7 @@ exercise_pars:
     theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
     
     # data --------------
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
-    music_top200 = pd.read_csv(fname)
-    
-    # tracks
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
-    track_features = pd.read_csv(fname)
+    from music_top200 import music_top200, track_features
     
     # student support ----------
     from siuba import pipe
@@ -77,6 +70,8 @@ exercise_pars:
         lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
     )
     
+    # remove the <ggplot: (528...)> printout
+    html_formatter.for_type(ggplot, lambda g: "")
     
 
 
@@ -91,6 +86,10 @@ import slides from '../slides/00-slides.markdown'
 
 
 ### Exercise 1: inspecting music data
+
+Use the dropdown box below to change the code.
+Try choosing "United States" from the dropdown, then click run.
+This should return only the top 200 hits from the United States.
 
 import CodeCellTemplater from '~/components/Cell/CodeCellTemplater.vue'
 

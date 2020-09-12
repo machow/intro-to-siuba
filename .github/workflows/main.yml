@@ -32,13 +32,13 @@ jobs:
           pip install -e ./utils/siututor ./utils/music_top200 ./utils/nbmarkbook
       - name: Install kernel for nbconvert
         run: |
-          ipython kernel install --user --name "venv-siublocks-org"
+          ipython kernel install --user --name "venv-intro-to-siuba"
 
       - name: "📝: Build content"
         run: | 
           make notebooks slides
       - name: "🐣: Check content diff"
-        run : git diff --stat
+        run : git diff --stat ':!*.ipynb'
 
       - name: Upload content
         uses: actions/upload-artifact@v2

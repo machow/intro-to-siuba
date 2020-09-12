@@ -32,14 +32,7 @@ chunk: summarize
     theme_set(theme_classic(base_family = "Noto Sans CJK JP"))
     
     # data --------------
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/music200.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/music200.csv"
-    music_top200 = pd.read_csv(fname)
-    
-    # tracks
-    #fname = "/Users/machow/Dropbox/Repo/siublocks-org/intro-tidyverse/tutorial/data/track_features.csv"
-    fname = "https://siublocks.s3.us-east-2.amazonaws.com/course-data/track_features.csv"
-    track_features = pd.read_csv(fname)
+    from music_top200 import music_top200, track_features
     
     # student support ----------
     from siuba import pipe
@@ -61,6 +54,8 @@ chunk: summarize
         lambda df: df.to_html(max_rows = pd.get_option("display.max_rows"), show_dimensions = True)
     )
     
+    # remove the <ggplot: (528...)> printout
+    html_formatter.for_type(ggplot, lambda g: "")
     
 
 
@@ -107,7 +102,7 @@ Modify the code below so it calculates max popularity and average danceability *
     <tr>
       <th>0</th>
       <td>99</td>
-      <td>0.677941</td>
+      <td>0.677937</td>
     </tr>
   </tbody>
 </table>
@@ -185,18 +180,14 @@ We used a plot and intuition to judge who tended to have highest energy and vale
 
 <template v-slot:output>
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](./03b-group-by_files/03b-group-by_11_1.png)
+![png](./03b-group-by_files/03b-group-by_11_0.png)
 
 
 
 
 
-    <ggplot: (-9223372036553513612)>
+
 
 
 

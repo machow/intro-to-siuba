@@ -145,18 +145,14 @@ For this example, we'll use Spotify top 200 track data for countries in Asia.
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](02d-slides_files/02d-slides_8_1.png)
+![png](02d-slides_files/02d-slides_8_0.png)
 
 
 
 
 
-    <ggplot: (297267208)>
+
 
 
 <aside class="notes">
@@ -183,18 +179,14 @@ A facetted plot could help here, by giving each country its own small panel.
 )
 ```
 
-    /Users/machow/.virtualenvs/siublocks-org/lib/python3.7/site-packages/plotnine/utils.py:1246: FutureWarning: is_categorical is deprecated and will be removed in a future version.  Use is_categorical_dtype instead
-      if pdtypes.is_categorical(arr):
 
-
-
-![png](02d-slides_files/02d-slides_11_1.png)
+![png](02d-slides_files/02d-slides_11_0.png)
 
 
 
 
 
-    <ggplot: (297294705)>
+
 
 
 <aside class="notes">

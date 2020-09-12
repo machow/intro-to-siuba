@@ -313,7 +313,7 @@ Their measures for a song include:
     flex: 1;
     height: 450px;
 }
-img.col-00 {
+.col-00 img {
     max-height: 50%;
 }
 </style>
@@ -363,7 +363,7 @@ The course is interactive: between short lessons you'll complete interactive exe
 
 
 
-    <ggplot: (-9223372036547727770)>
+
 
 
 <aside class="notes">
@@ -435,7 +435,7 @@ The top line of the code is the data. Every additional line is an action applied
       <td>228.373</td>
     </tr>
     <tr>
-      <th>2754</th>
+      <th>2753</th>
       <td>The Weeknd</td>
       <td>Blinding Lights</td>
       <td>Blinding Lights</td>
@@ -448,7 +448,7 @@ The top line of the code is the data. Every additional line is an action applied
       <td>201.573</td>
     </tr>
     <tr>
-      <th>3005</th>
+      <th>3004</th>
       <td>The Weeknd</td>
       <td>In Your Eyes (Remix)</td>
       <td>In Your Eyes (with Doja Cat) - Remix</td>
@@ -474,7 +474,7 @@ The top line of the code is the data. Every additional line is an action applied
       <td>...</td>
     </tr>
     <tr>
-      <th>23967</th>
+      <th>23966</th>
       <td>The Weeknd</td>
       <td>Beauty Behind The Madness</td>
       <td>The Hills</td>
@@ -487,7 +487,7 @@ The top line of the code is the data. Every additional line is an action applied
       <td>242.253</td>
     </tr>
     <tr>
-      <th>24689</th>
+      <th>24688</th>
       <td>The Weeknd</td>
       <td>Starboy</td>
       <td>Starboy</td>
@@ -500,7 +500,7 @@ The top line of the code is the data. Every additional line is an action applied
       <td>230.453</td>
     </tr>
     <tr>
-      <th>24983</th>
+      <th>24982</th>
       <td>The Weeknd</td>
       <td>After Hours</td>
       <td>In Your Eyes</td>
@@ -544,7 +544,7 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 
 
 
-    <ggplot: (-9223372036547685523)>
+
 
 
 <aside class="notes">
@@ -571,7 +571,7 @@ The next action, `ggplot(...)`, gets ready to make a plot, based on the data in 
 
 
 
-    <ggplot: (307223514)>
+
 
 
 <aside class="notes">
