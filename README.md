@@ -22,6 +22,8 @@ This course is automatically staged and deployed using github actions.
 3. For changed files, look on http://staging-learn.siuba.org/ to see that the changes make sense.
 4. Create a release, which will trigger a rebuild and deployment!
 
+> ⚠️: Every time you change the master branch, when someone clicks "run" binder will need to rebuild! This process can take over a minute. If you make changes on staging, binder will not need to rebuild after every change.
+
 ## Roadmap
 
 ### Before release
