@@ -20,7 +20,7 @@ jupyter:
     name: venv-intro-to-siuba
   purview:
     branch: master
-    repo: machow/purview
+    repo: machow/intro-to-siuba
     url: https://mybinder.org
     useBinder: 1
 ---
