@@ -28,8 +28,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r ./tutorial/requirements.txt
-          pip install -e ./tutorial/utils/{siututor,music_top200,nbmarkbook}
+          PIP_FLAGS=-"-use-deprecated=legacy-resolver"
+          pip install $PIP_FLAGS -r ./tutorial/requirements.txt
+          pip install $PIP_FLAGS -e ./tutorial/utils/{siututor,music_top200,nbmarkbook}
       - name: Install kernel for nbconvert
         run: |
           ipython kernel install --user --name "venv-intro-to-siuba"
