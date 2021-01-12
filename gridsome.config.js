@@ -53,7 +53,7 @@ module.exports = {
     {
       use: '@gridsome/vue-remark',
       options: {
-        baseDir: './tutorial',
+        baseDir: './tutorial/intro-data-science',
         path: '*/index.md',
         typeName: 'CourseLanding',
         template: './src/templates/CourseLanding.vue',
