@@ -16,7 +16,7 @@ $(INTRO_DS_DIR)/Rmd/%.Rmd: $(INTRO_DS_DIR)/setup.py
 $(INTRO_DS_DIR)/build/%.md: $(INTRO_DS_DIR)/Rmd/%.Rmd
 	jupytext --sync --execute $<
 	jupyter nbconvert \
-		--to nbmarkbook --template utils/nbmarkbook/notebook_template.j2 \
+		--to nbmarkbook --template tutorial/utils/nbmarkbook/notebook_template.j2 \
 		--output-dir $(dir $@) \
 		--output $(notdir $@) \
 		--TagRemovePreprocessor.remove_cell_tags="{'solution-code', 'hide-cell'}" \
