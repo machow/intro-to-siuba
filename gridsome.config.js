@@ -3,31 +3,6 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const Marked = require('marked')
-var html = require('remark-html')
-
-// from revealjs source code: 
-// https://github.com/hakimel/reveal.js/blob/master/plugin/markdown/plugin.js
-const CODE_LINE_NUMBER_REGEX = /\[([\s\d,|-]*)\]/;
-const renderer = new Marked.Renderer()
-renderer.code = ( code, language ) => {
-	// Off by default
-	let lineNumbers = '';
-
-	// Users can opt in to show line numbers and highlight
-	// specific lines.
-	// ```javascript []        show line numbers
-	// ```javascript [1,4-8]   highlights lines 1 and 4-8
-	if( CODE_LINE_NUMBER_REGEX.test( language ) ) {
-		lineNumbers = language.match( CODE_LINE_NUMBER_REGEX )[1].trim();
-		lineNumbers = `data-line-numbers="${lineNumbers}"`;
-		language = language.replace( CODE_LINE_NUMBER_REGEX, '' ).trim();
-	}
-
-	return `<pre><code ${lineNumbers} class="${language}">${code}</code></pre>`;
-};
-
-
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 
