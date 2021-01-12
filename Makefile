@@ -38,10 +38,6 @@ notebooks: $(NOTEBOOKS)
 
 slides: $(SLIDES)
 
-data:
-	cp ../intro-tidyverse/tutorial/music_top200.csv tutorial/intro-data-science/data
-	cp ../intro-tidyverse/tutorial/track_features.csv tutorial/intro-data-science/data
-
 build:
 	BUILD_ENV=production gridsome build
 
