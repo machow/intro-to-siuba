@@ -28,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
-          pip install -e ./utils/siututor ./utils/music_top200 ./utils/nbmarkbook
+          pip install -r ./tutorial/requirements.txt
+          pip install -e ./tutorial/utils/{siututor,music_top200,nbmarkbook}
       - name: Install kernel for nbconvert
         run: |
           ipython kernel install --user --name "venv-intro-to-siuba"
