@@ -9,19 +9,24 @@ $(INTRO_DS_DIR)/Rmd/%.Rmd: $(INTRO_DS_DIR)/setup.py
 	jupytext --sync $@
 	jupyter nbconvert --to ipynb --inplace \
 		--NotebookExporter.preprocessors="['nbmarkbook.SetupCodePreprocessor']" \
+		--NotebookClient.record_timing=False \
 		$(INTRO_DS_DIR)/notebooks/$*.ipynb
 	jupytext --sync $@
 
 
 $(INTRO_DS_DIR)/build/%.md: $(INTRO_DS_DIR)/Rmd/%.Rmd
-	jupytext --sync --execute $<
+	jupytext --sync $<
 	jupyter nbconvert \
-		--to nbmarkbook --template tutorial/utils/nbmarkbook/notebook_template.j2 \
+		--execute \
+		--to nbmarkbook --template tutorial/utils/nbmarkbook/md_template \
 		--output-dir $(dir $@) \
 		--output $(notdir $@) \
 		--TagRemovePreprocessor.remove_cell_tags="{'solution-code', 'hide-cell'}" \
 		--TagRemovePreprocessor.remove_input_tags="{'hide-input'}" \
 		--TagRemovePreprocessor.remove_single_output_tags="{'hide-output'}" \
+		--ExecutePreprocessor.record_timing=False \
+		--Execute.record_timing=False \
+		--NotebookClient.record_timing=False \
 		$(INTRO_DS_DIR)/notebooks/$*.ipynb
 
 

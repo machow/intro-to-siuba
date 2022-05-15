@@ -148,7 +148,7 @@ class MetaExporter(Exporter):
 
 
 from traitlets import Bool, Unicode, default
-from nbconvert.exporters.slides import prepare
+from nbconvert.exporters.slides import _RevealMetadataPreprocessor
 from nbconvert.postprocessors.base import PostProcessorBase
 from nbconvert.filters.markdown import markdown2html
 
@@ -182,7 +182,7 @@ class SlidesSimpleExporter(MarkdownExporter):
         return c
 
     def from_notebook_node(self, nb, resources=None, **kw):
-        nb = prepare(nb)
+        nb, _ = _RevealMetaDataPreprocessor().preprocess(nb)
 
         out = super().from_notebook_node(nb, resources=resources, **kw)
 
