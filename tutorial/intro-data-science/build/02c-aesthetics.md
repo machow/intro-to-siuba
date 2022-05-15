@@ -91,7 +91,9 @@ Use the code cell below to recreate it.
 
 
 
+    
 ![png](./02c-aesthetics_files/02c-aesthetics_4_0.png)
+    
 
 
 

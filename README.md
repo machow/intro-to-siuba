@@ -32,7 +32,7 @@ In order to build this course locally, you can run the following (for MacOSX).
 # install this font, which supports many asian characters
 # you have to clear matplotlib's cache, or it won't see the new font.
 brew install font-noto-sans-cjk-jp
-rm ~/.cache/matplotlib/*
+rm ~/.matplotlib/fontlist*
 
 # install requirements
 pip install -r tutorial/requirements-dev.txt

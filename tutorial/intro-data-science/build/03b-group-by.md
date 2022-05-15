@@ -180,8 +180,13 @@ We used a plot and intuition to judge who tended to have highest energy and vale
 
 <template v-slot:output>
 
+    /Users/machow/.virtualenvs/intro-to-siuba/lib/python3.8/site-packages/plotnine/utils.py:371: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
 
-![png](./03b-group-by_files/03b-group-by_11_0.png)
+
+
+    
+![png](./03b-group-by_files/03b-group-by_11_1.png)
+    
 
 
 
