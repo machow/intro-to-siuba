@@ -182,7 +182,7 @@ class SlidesSimpleExporter(MarkdownExporter):
         return c
 
     def from_notebook_node(self, nb, resources=None, **kw):
-        nb, _ = _RevealMetaDataPreprocessor().preprocess(nb)
+        nb, _ = _RevealMetadataPreprocessor().preprocess(nb)
 
         out = super().from_notebook_node(nb, resources=resources, **kw)
 
