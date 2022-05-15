@@ -15,6 +15,7 @@
         status: {{status}}<br>
         kernel status: {{(kernel || {}).status}}<br>
         phase: {{phase}}<br>
+        connectionError: {{connectionError}}
       </details>
     </div>
   </div>
