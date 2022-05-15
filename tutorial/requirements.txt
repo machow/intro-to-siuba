@@ -3,6 +3,6 @@ ipython_genutils
 jinja2<3.0.0
 jupytext
 MarkupSafe==1.1.1
-nbconvert==5.6.1
+nbconvert
 plotnine
 siuba
