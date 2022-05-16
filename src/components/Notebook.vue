@@ -15,7 +15,7 @@
         status: {{status}}<br>
         kernel status: {{(kernel || {}).status}}<br>
         phase: {{phase}}<br>
-        connectionError: {{connectionError}}
+        connectionError: {{connectionError}}<br>
       </details>
     </div>
   </div>
@@ -171,7 +171,8 @@ module.exports = {
         await this.requireKernel()
         const future = await this.kernel.requestExecute({code})
         return future
-      } catch {
+      } catch (error) {
+        this.log(() => console.error(error))
         console.log("execute error handling")
         window.localStorage.removeItem(this.storageKey)
         this.connectionError = true
