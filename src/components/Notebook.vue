@@ -15,7 +15,8 @@
         status: {{status}}<br>
         kernel status: {{(kernel || {}).status}}<br>
         phase: {{phase}}<br>
-        connectionError: {{connectionError}}<br>
+        url: {{finalUrl}}
+        <input v-model="debugUrl">
       </details>
     </div>
   </div>
@@ -46,6 +47,7 @@ module.exports = {
       connectionError: null,
       storageExpire: 60,
       debug: false,
+      debugUrl: null,
     }
   },
   computed: {
@@ -59,7 +61,10 @@ module.exports = {
         return this.kernel.status
 
       return null
-    }
+    },
+    finalUrl () {
+      return this.debugUrl || this.url
+    },
   },
   methods: {
     log (f) {
@@ -79,11 +84,11 @@ module.exports = {
 
       if (this.useBinder) {
         // get new binder settings or use custom ones
-        settings = await this.requestBinder(this.repo, this.branch, this.url)
+        settings = await this.requestBinder(this.repo, this.branch, this.finalUrl)
         return await this.init(settings)
       }
 
-      return await this.init({baseUrl: this.url, token: this.token})
+      return await this.init({baseUrl: this.finalUrl, token: this.token})
     },
     async init (settings) {
       // baseUrl, token
