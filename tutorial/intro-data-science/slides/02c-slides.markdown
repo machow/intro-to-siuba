@@ -19,7 +19,9 @@ In this lesson, you'll use plotnine aesthetics to set more than just the positio
 ```
 
 
+
 ![png](02c-slides_files/02c-slides_5_0.png)
+
 
 
 
@@ -198,7 +200,9 @@ Now you'll learn to add two more aesthetics--color and size--to communicate even
 ```
 
 
+
 ![png](02c-slides_files/02c-slides_11_0.png)
+
 
 
 
@@ -233,7 +237,9 @@ This communicates that lower energy tracks (toward the left of the plot) tend to
 ```
 
 
+
 ![png](02c-slides_files/02c-slides_14_0.png)
+
 
 
 
@@ -276,7 +282,9 @@ and size: to communicate information about four variables in your dataset.
 ```
 
 
+
 ![png](02c-slides_files/02c-slides_17_0.png)
+
 
 
 

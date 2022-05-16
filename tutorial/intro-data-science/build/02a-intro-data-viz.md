@@ -9,7 +9,7 @@ chunk: visualize
 <Notebook
   v-slot="nb"
   branch="master"
-  repo="machow/purview"
+  repo="machow/intro-to-siuba"
   url="https://mybinder.org"
   useBinder="1"
   useStorage="1"
@@ -196,7 +196,9 @@ Note that you could swap out `roddy` for any of the other two variables above.
 <template v-slot:output>
 
 
+    
 ![png](./02a-intro-data-viz_files/02a-intro-data-viz_5_0.png)
+    
 
 
 
@@ -250,7 +252,9 @@ Make a plot below, and come up with an answer you might share with another perso
 <template v-slot:output>
 
 
+    
 ![png](./02a-intro-data-viz_files/02a-intro-data-viz_8_0.png)
+    
 
 
 

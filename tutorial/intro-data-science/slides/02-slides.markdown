@@ -5,7 +5,7 @@
 <aside class="notes">
 
 
-In the last chapter, you used the dplyr package to answer some questions about the gapminder dataset.
+In the last chapter, you used siuba to answer some questions about the music_top200 dataset.
 
 You've been able to..
 
@@ -24,7 +24,9 @@ In this chapter, you'll learn the essential skill of data visualization using th
 # Visualizing with plotnine
 
 
+
 ![png](02-slides_files/02-slides_6_0.png)
+
 
 
 
@@ -279,7 +281,9 @@ But this one has only 27 rows: one for each track by Billie Eilish in the origin
 ```
 
 
+
 ![png](02-slides_files/02-slides_24_0.png)
+
 
 
 

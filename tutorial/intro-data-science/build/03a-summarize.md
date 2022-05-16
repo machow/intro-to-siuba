@@ -9,7 +9,7 @@ chunk: summarize
 <Notebook
   v-slot="nb"
   branch="master"
-  repo="machow/purview"
+  repo="machow/intro-to-siuba"
   url="https://mybinder.org"
   useBinder="1"
   useStorage="1"
@@ -184,15 +184,21 @@ The code below calculates the average duration.
 
 </code-cell>
 
-
-Q: what is the median duration?
-
-<details><summary>answer</summary>201.084</details>
-
-Q: Add a second argument to summarize, which calculates the sum of streams. How large is it?
-
-<details><summary>answer</summary>301,822,525</details>
-
+<prompt-expandable header="What is the median duration?">
+<q-multiple-choice>
+  <q-opt text="205.990"><span></span></q-opt>
+  <q-opt text="65.631"><span></span></q-opt>
+  <q-opt text="201.084"><span>That's right!</span></q-opt>
+  <q-opt text="851.871"><span></span></q-opt>  
+</q-multiple-choice>
+</prompt-expandable><prompt-expandable header="Add a second argument to summarize, which calculates the sum of streams. How large is it?">
+<q-multiple-choice>
+  <q-opt text="30,182,252"><span></span></q-opt>
+  <q-opt text="301,822,525"><span>That's right!</span></q-opt>  
+  <q-opt text="451,822,525"><span></span></q-opt>
+  <q-opt text="45,182,252"><span></span></q-opt>  
+</q-multiple-choice>
+</prompt-expandable>
 ### Exercise 2:
 
 Use verbs you learned in chapter 1 to do the following:

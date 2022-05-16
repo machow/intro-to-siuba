@@ -24,6 +24,27 @@ This course is automatically staged and deployed using github actions.
 
 > ⚠️: Every time you change the master branch, when someone clicks "run" binder will need to rebuild! This process can take over a minute. If you make changes on staging, binder will not need to rebuild after every change.
 
+## Development
+
+In order to build this course locally, you can run the following (for MacOSX).
+
+```shell
+# install this font, which supports many asian characters
+# you have to clear matplotlib's cache, or it won't see the new font.
+brew install font-noto-sans-cjk-jp
+rm ~/.matplotlib/fontlist*
+
+# install requirements
+pip install -r tutorial/requirements-dev.txt
+
+
+# regenerate everything
+make notebooks
+
+# note that if you want to force everything to regenerate, use this flag
+make notebook -B
+```
+
 ## Roadmap
 
 ### Before release

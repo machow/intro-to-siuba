@@ -1,0 +1,7 @@
+ipykernel
+ipython_genutils
+jinja2
+jupytext
+nbconvert
+plotnine
+siuba

@@ -19,7 +19,7 @@ exercise_pars:
 <Notebook
   v-slot="nb"
   branch="master"
-  repo="machow/purview"
+  repo="machow/intro-to-siuba"
   url="https://mybinder.org"
   useBinder="1"
   useStorage="1"
@@ -147,7 +147,9 @@ Generally tracks with higher energy tend to be less acoustic, as shown in the pl
 <template v-slot:output>
 
 
+    
 ![png](./02b-geoms_files/02b-geoms_7_0.png)
+    
 
 
 

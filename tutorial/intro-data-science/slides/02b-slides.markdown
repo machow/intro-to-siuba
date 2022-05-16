@@ -11,7 +11,9 @@
 ```
 
 
+
 ![png](02b-slides_files/02b-slides_3_0.png)
+
 
 
 
@@ -45,7 +47,9 @@ Adding labels to the point will let us identify songs in the plot.
 ```
 
 
+
 ![png](02b-slides_files/02b-slides_6_0.png)
+
 
 
 
@@ -81,7 +85,9 @@ For example, relative to other songs:
 ```
 
 
+
 ![png](02b-slides_files/02b-slides_9_0.png)
+
 
 
 
@@ -110,7 +116,9 @@ Notice the words in front don't cover other words as much, but it can also be ha
 ```
 
 
+
 ![png](02b-slides_files/02b-slides_12_0.png)
+
 
 
 

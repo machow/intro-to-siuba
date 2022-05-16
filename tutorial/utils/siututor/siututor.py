@@ -1,7 +1,8 @@
 __version__ = "0.0.1"
 
 import siuba
-from siuba.dply.verbs import DPLY_FUNCTIONS, NoArgs
+from siuba.dply.verbs import DPLY_FUNCTIONS
+from siuba.siu.dispatchers import NoArgs
 from functools import wraps
 import itertools
 

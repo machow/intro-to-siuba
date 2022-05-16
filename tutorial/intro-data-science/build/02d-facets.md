@@ -9,7 +9,7 @@ chunk: visualize
 <Notebook
   v-slot="nb"
   branch="master"
-  repo="machow/purview"
+  repo="machow/intro-to-siuba"
   url="https://mybinder.org"
   useBinder="1"
   useStorage="1"
@@ -107,8 +107,13 @@ Then, answer the questions below.
 
 <template v-slot:output>
 
+    /Users/machow/.virtualenvs/intro-to-siuba/lib/python3.8/site-packages/plotnine/utils.py:371: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
 
-![png](./02d-facets_files/02d-facets_5_0.png)
+
+
+    
+![png](./02d-facets_files/02d-facets_5_1.png)
+    
 
 
 

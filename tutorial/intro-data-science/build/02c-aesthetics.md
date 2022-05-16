@@ -9,7 +9,7 @@ chunk: visualize
 <Notebook
   v-slot="nb"
   branch="master"
-  repo="machow/purview"
+  repo="machow/intro-to-siuba"
   url="https://mybinder.org"
   useBinder="1"
   useStorage="1"
@@ -91,7 +91,9 @@ Use the code cell below to recreate it.
 
 
 
+    
 ![png](./02c-aesthetics_files/02c-aesthetics_4_0.png)
+    
 
 
 

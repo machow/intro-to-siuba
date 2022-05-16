@@ -357,7 +357,9 @@ The course is interactive: between short lessons you'll complete interactive exe
 ```
 
 
+
 ![png](00-slides_files/00-slides_19_0.png)
+
 
 
 
@@ -538,7 +540,9 @@ Don't worry to much about the details for now. Filter is the first thing you'll 
 ```
 
 
+
 ![png](00-slides_files/00-slides_25_0.png)
+
 
 
 
@@ -565,7 +569,9 @@ The next action, `ggplot(...)`, gets ready to make a plot, based on the data in 
 ```
 
 
+
 ![png](00-slides_files/00-slides_28_0.png)
+
 
 
 

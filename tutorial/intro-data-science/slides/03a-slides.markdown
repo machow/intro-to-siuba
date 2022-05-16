@@ -304,7 +304,7 @@ The mean method calculates the average of a set of values.
 
 
 If you think about it, it doesn't really make sense to summarize across all countries.
-It may make more sense to ask compare our track to averages in the same country: Japan.
+It may make more sense to compare our track to averages in the same country: Japan.
 
 To answer this, you can combine the summarize verb with filter:
 filter your data for a particular country first, then summarize the result.
