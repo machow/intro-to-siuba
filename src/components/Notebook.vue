@@ -172,7 +172,7 @@ module.exports = {
         const future = await this.kernel.requestExecute({code})
         return future
       } catch (error) {
-        this.log(() => console.error(error))
+        this.log(() => console.log(error))
         console.log("execute error handling")
         window.localStorage.removeItem(this.storageKey)
         this.connectionError = true
