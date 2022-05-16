@@ -23,7 +23,9 @@ visualizations, by returning to the plotnine package from Chapter 2.
 ```
 
 
+
 ![png](03c-slides_files/03c-slides_4_0.png)
+
 
 
 
@@ -177,7 +179,9 @@ graphing countries in a scatter plot, even though it's a new dataset.
 ```
 
 
+
 ![png](03c-slides_files/03c-slides_13_0.png)
+
 
 
 
@@ -209,7 +213,9 @@ It's hard to get a a sense of how many streams the last position track had, sinc
    + labs(title = "Top 200 hits - max streams overall"))</code></pre>
 
 
+
 ![png](03c-slides_files/03c-slides_17_0.png)
+
 
 
 
@@ -355,7 +361,9 @@ to see how much countries are streaming top tracks on different continents conti
 ```
 
 
+
 ![png](03c-slides_files/03c-slides_24_0.png)
+
 
 
 

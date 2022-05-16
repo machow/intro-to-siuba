@@ -146,7 +146,9 @@ For this example, we'll use Spotify top 200 track data for countries in Asia.
 ```
 
 
+
 ![png](02d-slides_files/02d-slides_8_0.png)
+
 
 
 
@@ -179,8 +181,13 @@ A facetted plot could help here, by giving each country its own small panel.
 )
 ```
 
+    /Users/machow/.virtualenvs/intro-to-siuba/lib/python3.8/site-packages/plotnine/utils.py:371: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
 
-![png](02d-slides_files/02d-slides_11_0.png)
+
+
+
+![png](02d-slides_files/02d-slides_11_1.png)
+
 
 
 
@@ -194,15 +201,11 @@ A facetted plot could help here, by giving each country its own small panel.
 
 You facet a plot by adding another option, with a +, to the end of your code, after geom_point.
 
-You add facet underscore wrap, then "tilde continent" within the parentheses.
+You add facet underscore wrap, then "tilde country" within the parentheses.
 
 In R, the tilde symbol typically means "by", meaning that we're splitting the
-plot by continent, and you can usually find it on the upper left of your keyboard.
-This tells ggplot2 to divide the data into subplots based on the continent variable.
-
-Faceting is a powerful tool, and in
-the exercises you'll see how you can use faceting
-not just to compare among continents, but to compare between all of the years in our dataset.
+plot by country, and you can usually find it on the upper left of your keyboard.
+This tells ggplot2 to divide the data into subplots based on the country variable.
 
 
 </aside></section></section><section class=""><section class="">

@@ -191,7 +191,7 @@ The result is the same table, but with streams replaced with a new value, one th
 This is how you manipulate existing variables in the table.
 That's often necessary during data processing and cleaning.
 
-Just like filter and arrange, you're not altering the original gapminder
+Just like filter and arrange, you're not altering the original music_top200
 data, you're just changing the value in this new data frame that's being returned.
 
 </aside></section></section><section data-transition="slide-in none-out" class=""><section data-transition="slide-in none-out" class="">
